@@ -1,9 +1,13 @@
 body {
-  margin: 0;
-  padding: 0;
+  min-height: 75rem;
+  padding-top: 7rem;
   font-family: sans-serif;
 }
-.active{
-  background-color: red;
+
+.glyphicon {
+  width: 25px;
 }
 
+.glyphicon-plus {
+  color: red;
+}

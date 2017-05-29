@@ -1,0 +1,24 @@
+.table > thead:first-child > tr:first-child > th:first-child {
+  position: absolute;
+  display: inline-block;
+  background-color: #fff;
+}
+
+.table > tbody > tr > td:first-child {
+  position: absolute;
+  display: inline-block;
+  background-color: #fff;
+  height: 100%;
+}
+
+.table > thead:first-child > tr:first-child > th:nth-child(2) {
+  padding-left: 120px;
+}
+
+.table > tbody > tr > td:nth-child(2) {
+  padding-left: 120px !important;
+}
+
+.table > tr > th {
+    width: 120px;
+}
