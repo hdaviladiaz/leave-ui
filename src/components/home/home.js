@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Breadcrumb} from 'react-bootstrap';
 import './home.css';
 
 export default class Home extends Component {
@@ -24,47 +25,55 @@ export default class Home extends Component {
         const TWer = this.getTWerInformations();
 
         return (
+            <div>
 
-            <div className="panel panel-default">
-                <div className="panel-heading">TWer Informations</div>
-                <div className="panel-body">
-                    <dl className="dl-horizontal">
-                        <dt>Name</dt><dd>{TWer.name}</dd>
-                        <dt>E-mail</dt><dd>{TWer.mail}</dd>
-                        <dt>Genre</dt><dd>{TWer.genre}</dd>
-                        <dt>Grade</dt><dd>{TWer.grade}</dd>
-                        <dt>Role</dt><dd>{TWer.role}</dd>
-                        <dt>Hired</dt><dd>{TWer.hired}</dd>
-                        <dt>Available Days</dt><dd>{TWer.availableDays}</dd>
-                    </dl>
+                <Breadcrumb>
+                    <Breadcrumb.Item href="#">
+                        Home
+                    </Breadcrumb.Item>
+                    <Breadcrumb.Item active href="/">
+                        TWer Informations
+                    </Breadcrumb.Item>
+                </Breadcrumb>
 
-                    <h4>Leave History</h4>
+                <h4>TWer Informations</h4>
 
-                    <table className="table table-sm table-striped">
-                        <thead>
-                            <tr>
-                                <th>Start Date</th>
-                                <th>End Date</th>
-                                <th>Days</th>
-                                <th>Type</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        {
-                            TWer.leaves.map(function(row,i){
-                                return (
-                                    <tr key={i}>
-                                        <td>{ row.start }</td>
-                                        <td>{ row.end }</td>
-                                        <td>{ row.days }</td>
-                                        <td>{ row.type }</td>
-                                    </tr>
-                                );
-                            })
-                        }
-                        </tbody>
-                    </table>
-                </div>
+                <dl className="dl-horizontal">
+                    <dt>Name</dt><dd>{TWer.name}</dd>
+                    <dt>E-mail</dt><dd>{TWer.mail}</dd>
+                    <dt>Genre</dt><dd>{TWer.genre}</dd>
+                    <dt>Grade</dt><dd>{TWer.grade}</dd>
+                    <dt>Role</dt><dd>{TWer.role}</dd>
+                    <dt>Hired</dt><dd>{TWer.hired}</dd>
+                    <dt>Available Days</dt><dd>{TWer.availableDays}</dd>
+                </dl>
+
+                <h4>Leave History</h4>
+
+                <table className="table table-sm table-striped">
+                    <thead>
+                        <tr>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Days</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {
+                        TWer.leaves.map(function(row,i){
+                            return (
+                                <tr key={i}>
+                                    <td>{ row.start }</td>
+                                    <td>{ row.end }</td>
+                                    <td>{ row.days }</td>
+                                    <td>{ row.type }</td>
+                                </tr>
+                            );
+                        })
+                    }
+                    </tbody>
+                </table>
             </div>
 
         );
