@@ -6,7 +6,7 @@ import './menu.css';
 export default class Menu extends Component {
     render() {
         return (
-            <Navbar fluid fixedTop collapse>
+            <Navbar fluid fixedTop>
                 <Navbar.Header>
                     <Navbar.Brand>
                         TW Leave
@@ -19,10 +19,10 @@ export default class Menu extends Component {
                             <Glyphicon glyph="home"/> Home
                         </NavItem>
                     </LinkContainer>
-                    <NavDropdown eventKey={3} id="basic-nav-dropdown" title={
+                    <NavDropdown eventKey={2} id="basic-nav-dropdown" title={
                         <span>
                             <Glyphicon glyph="random" />
-                            Request <span class="caret"></span>
+                            Request
                         </span>
                     } >
                         <LinkContainer to="/request/vacation">
@@ -47,7 +47,7 @@ export default class Menu extends Component {
                     <NavDropdown eventKey={3} id="basic-nav-dropdown" title={
                         <span>
                             <Glyphicon glyph="user" />
-                            User Name <span class="caret"></span>
+                            User Name
                         </span>
                     } >
                         <MenuItem eventKey={3.1}>
