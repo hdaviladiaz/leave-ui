@@ -47,7 +47,7 @@ export default class Menu extends Component {
                     <NavDropdown eventKey={3} id="basic-nav-dropdown" title={
                         <span>
                             <Glyphicon glyph="user" />
-                            User Name
+                            username
                         </span>
                     } >
                         <MenuItem eventKey={3.1}>

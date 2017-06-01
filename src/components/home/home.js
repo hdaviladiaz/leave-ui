@@ -1,81 +1,78 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {Breadcrumb} from 'react-bootstrap';
+import axios from 'axios';
+
+//import PeopleService from '../../services/PeopleService';
 import './home.css';
 
 export default class Home extends Component {
 
-    getTWerInformations() {
-        return {
-            name: "Marcio Alves Barroso",
-            mail: "malvesb@thoughtworks.com",
-            genre: "Mas",
-            grade: "DEV",
-            role: "Sr Con",
-            hired: "2015-05-15",
-            availableDays: 8,
-            leaves: [
-                {start: '2015-12-24', end: '2016-01-02', days: '10', type: 'Anual Leave'},
-                {start: '2016-02-22', end: '2016-03-05', days: '12', type: 'Medical Leave'}
-            ]
-        }
+    constructor(props) {
+        super(props);
+        this.state = {
+            people: null
+        };
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:3000/people/20260').then(function (response) {
+            this.setState({people: response.data[0]});
+        }.bind(this));
     }
 
     render() {
+        console.log('render');
 
-        const TWer = this.getTWerInformations();
+        let TWer = this.state.people;
 
-        return (
-            <div>
+        console.log(TWer);
 
-                <Breadcrumb>
-                    <Breadcrumb.Item href="#">
-                        Home
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item active href="/">
-                        TWer Informations
-                    </Breadcrumb.Item>
-                </Breadcrumb>
+        if (TWer) {
 
-                <h4>TWer Informations</h4>
+            return (
 
-                <dl className="dl-horizontal">
-                    <dt>Name</dt><dd>{TWer.name}</dd>
-                    <dt>E-mail</dt><dd>{TWer.mail}</dd>
-                    <dt>Genre</dt><dd>{TWer.genre}</dd>
-                    <dt>Grade</dt><dd>{TWer.grade}</dd>
-                    <dt>Role</dt><dd>{TWer.role}</dd>
-                    <dt>Hired</dt><dd>{TWer.hired}</dd>
-                    <dt>Available Days</dt><dd>{TWer.availableDays}</dd>
-                </dl>
+                <div>
 
-                <h4>Leave History</h4>
+                    <Breadcrumb>
+                        <Breadcrumb.Item href="#">
+                            Home
+                        </Breadcrumb.Item>
+                        <Breadcrumb.Item active href="/">
+                            TWer Informations
+                        </Breadcrumb.Item>
+                    </Breadcrumb>
 
-                <table className="table table-sm table-striped">
-                    <thead>
-                        <tr>
-                            <th>Start Date</th>
-                            <th>End Date</th>
-                            <th>Days</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {
-                        TWer.leaves.map(function(row,i){
-                            return (
-                                <tr key={i}>
-                                    <td>{ row.start }</td>
-                                    <td>{ row.end }</td>
-                                    <td>{ row.days }</td>
-                                    <td>{ row.type }</td>
-                                </tr>
-                            );
-                        })
-                    }
-                    </tbody>
-                </table>
-            </div>
+                    <h4 className="home-twer-information">TWer Informations</h4>
 
-        );
+                    <div className="row">
+                        <div className="col-lg-2">
+                            <img src={TWer.picture.url} alt="" />
+                        </div>
+                        <div className="col-lg-10">
+                            <dl className="dl-horizontal">
+                                <dt>Name</dt>
+                                <dd>{TWer.preferredName}</dd>
+                                <dt>E-mail</dt>
+                                <dd>{ TWer.loginName }@thoughtworks.com</dd>
+                                <dt>Gender</dt>
+                                <dd>{TWer.gender}</dd>
+                                <dt>Grade</dt>
+                                <dd>{TWer.grade.name}</dd>
+                                <dt>Role</dt>
+                                <dd>{TWer.role.name}</dd>
+                                <dt>Hired</dt>
+                                <dd>{TWer.hireDate}</dd>
+                                <dt>Available Days</dt>
+                                <dd>0</dd>
+                            </dl>
+
+                        </div>
+                    </div>
+
+                </div>
+            );
+        }
+
+        return (<div></div>);
     }
 }

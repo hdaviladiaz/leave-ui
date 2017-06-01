@@ -1,10 +1,8 @@
+import axios from 'axios';
+
 export default class PeopleService {
 
-  constructor(httpClient){
-    this.httpClient = httpClient;
-  }
-
-  get(){
-    return 'none';
+  get(id){
+      return axios.get('http://localhost:3000/people/' + id);
   }
 }
