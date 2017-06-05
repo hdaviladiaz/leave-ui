@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {Breadcrumb} from 'react-bootstrap';
-import axios from 'axios';
 
-//import PeopleService from '../../services/PeopleService';
+import PeopleService from '../../services/PeopleService';
 import './home.css';
 
 export default class Home extends Component {
@@ -15,64 +14,47 @@ export default class Home extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3000/people/20260').then(function (response) {
-            this.setState({people: response.data[0]});
-        }.bind(this));
+      let peopleService = new PeopleService();
+      console.log(peopleService);
+      let pepe = peopleService.get(20260);
+      console.log(pepe);
+      // pepe.then(person =>
+      //   this.setState({person: person})
+      // );
     }
 
     render() {
-        console.log('render');
-
-        let TWer = this.state.people;
-
-        console.log(TWer);
-
-        if (TWer) {
-
+        let person = this.state.person;
+        if (person) {
             return (
-
                 <div>
-
-                    <Breadcrumb>
-                        <Breadcrumb.Item href="#">
-                            Home
-                        </Breadcrumb.Item>
-                        <Breadcrumb.Item active href="/">
-                            TWer Informations
-                        </Breadcrumb.Item>
-                    </Breadcrumb>
-
-                    <h4 className="home-twer-information">TWer Informations</h4>
-
+                    <h2 className="home-person-information">Your Information</h2>
                     <div className="row">
                         <div className="col-lg-2">
-                            <img src={TWer.picture.url} alt="" />
+                            <img src={person.picture.url} />
                         </div>
                         <div className="col-lg-10">
                             <dl className="dl-horizontal">
                                 <dt>Name</dt>
-                                <dd>{TWer.preferredName}</dd>
+                                <dd>{person.preferredName}</dd>
                                 <dt>E-mail</dt>
-                                <dd>{ TWer.loginName }@thoughtworks.com</dd>
+                                <dd>{ person.loginName }@thoughtworks.com</dd>
                                 <dt>Gender</dt>
-                                <dd>{TWer.gender}</dd>
+                                <dd>{person.gender}</dd>
                                 <dt>Grade</dt>
-                                <dd>{TWer.grade.name}</dd>
+                                <dd>{person.grade.name}</dd>
                                 <dt>Role</dt>
-                                <dd>{TWer.role.name}</dd>
+                                <dd>{person.role.name}</dd>
                                 <dt>Hired</dt>
-                                <dd>{TWer.hireDate}</dd>
+                                <dd>{person.hireDate}</dd>
                                 <dt>Available Days</dt>
-                                <dd>0</dd>
+                                <dd>15</dd>
                             </dl>
-
                         </div>
                     </div>
-
                 </div>
             );
         }
-
         return (<div></div>);
     }
 }
