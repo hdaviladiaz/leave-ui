@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "enzyme": "2.8.2",
+    "jasmine-reporters": "^2.2.1",
     "node-sass-chokidar": "0.0.1",
     "npm-run-all": "^4.0.2",
     "react-scripts": "1.0.5",
