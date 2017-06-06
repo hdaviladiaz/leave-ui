@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import PeopleService from '../../services/PeopleService';
 import './home.css';
+import EmployeeInformation from './resources/employee-information.js'
 
 export default class Home extends Component {
 
@@ -24,28 +25,7 @@ export default class Home extends Component {
         if (person) {
             return (
                 <div>
-                    <h2 className="home-person-information">Tu Información</h2>
-                    <div className="row">
-                        <div className="col-lg-2">
-                            <img src={person.picture.url} alt="foto personal"/>
-                        </div>
-                        <div className="col-lg-10">
-                            <dl className="dl-horizontal">
-                                <dt>Nombre</dt>
-                                <dd>{person.preferredName}</dd>
-                                <dt>Correo Electrónico</dt>
-                                <dd>{ person.loginName }@thoughtworks.com</dd>
-                                <dt>Oficina base</dt>
-                                <dd>{person.homeOffice.name}</dd>
-                                <dt>Oficina actual</dt>
-                                <dd>{person.workingOffice.name}</dd>
-                                <dt>Fecha de contratación</dt>
-                                <dd>{person.hireDate}</dd>
-                                <dt>Días disponibles</dt>
-                                <dd></dd>
-                            </dl>
-                        </div>
-                    </div>
+                  <EmployeeInformation employee={this.state.person} />
                 </div>
             );
         }
