@@ -39,7 +39,7 @@ export default class Home extends Component {
                                 <dd>{person.homeOffice.name}</dd>
                                 <dt>Oficina actual</dt>
                                 <dd>{person.workingOffice.name}</dd>
-                                <dt>Contratado</dt>
+                                <dt>Fecha de contratación</dt>
                                 <dd>{person.hireDate}</dd>
                                 <dt>Días disponibles</dt>
                                 <dd></dd>
