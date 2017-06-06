@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Breadcrumb} from 'react-bootstrap';
 
 import PeopleService from '../../services/PeopleService';
 import './home.css';
@@ -15,12 +14,9 @@ export default class Home extends Component {
 
     componentDidMount() {
       let peopleService = new PeopleService();
-      console.log(peopleService);
-      let pepe = peopleService.get(20260);
-      console.log(pepe);
-      // pepe.then(person =>
-      //   this.setState({person: person})
-      // );
+      peopleService.get(15576).then(person =>
+        this.setState({person: person})
+      );
     }
 
     render() {
@@ -28,27 +24,25 @@ export default class Home extends Component {
         if (person) {
             return (
                 <div>
-                    <h2 className="home-person-information">Your Information</h2>
+                    <h2 className="home-person-information">Tu Información</h2>
                     <div className="row">
                         <div className="col-lg-2">
-                            <img src={person.picture.url} />
+                            <img src={person.picture.url} alt="foto personal"/>
                         </div>
                         <div className="col-lg-10">
                             <dl className="dl-horizontal">
-                                <dt>Name</dt>
+                                <dt>Nombre</dt>
                                 <dd>{person.preferredName}</dd>
-                                <dt>E-mail</dt>
+                                <dt>Correo Electrónico</dt>
                                 <dd>{ person.loginName }@thoughtworks.com</dd>
-                                <dt>Gender</dt>
-                                <dd>{person.gender}</dd>
-                                <dt>Grade</dt>
-                                <dd>{person.grade.name}</dd>
-                                <dt>Role</dt>
-                                <dd>{person.role.name}</dd>
-                                <dt>Hired</dt>
+                                <dt>Oficina base</dt>
+                                <dd>{person.homeOffice.name}</dd>
+                                <dt>Oficina actual</dt>
+                                <dd>{person.workingOffice.name}</dd>
+                                <dt>Contratado</dt>
                                 <dd>{person.hireDate}</dd>
-                                <dt>Available Days</dt>
-                                <dd>15</dd>
+                                <dt>Días disponibles</dt>
+                                <dd></dd>
                             </dl>
                         </div>
                     </div>
