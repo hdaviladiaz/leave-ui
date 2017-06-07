@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import PeopleService from '../../services/PeopleService';
 import './home.css';
-import EmployeeInformation from './resources/employee-information.js'
+import PersonalInformation from './resources/personal-information.js'
 
 export default class Home extends Component {
 
@@ -21,14 +21,10 @@ export default class Home extends Component {
     }
 
     render() {
-        let person = this.state.person;
-        if (person) {
             return (
                 <div>
-                  <EmployeeInformation employee={this.state.person} />
+                  <PersonalInformation person={this.state.person} />
                 </div>
             );
-        }
-        return (<div></div>);
-    }
+      }
 }
