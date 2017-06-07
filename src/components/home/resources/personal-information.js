@@ -1,13 +1,20 @@
 import React from 'react';
+import { Alert } from 'react-bootstrap';
 
 const PersonalInformation = ({person, error}) =>{
 
   if(error){
-    return(<div>There has been an error retrieving your information </div>);
+    return(
+		      <Alert bsStyle="danger">
+		      Hubo un error al consultar su información
+		      </Alert>);
   }
 
   if(!person){
-   return(<div>Loading ...</div>);
+   return(
+		   <Alert bsStyle="info">
+		   Recuperando información
+		   </Alert>);
   }
 
   return(
