@@ -17,13 +17,13 @@ export default class Home extends Component {
       let peopleService = new PeopleService();
       peopleService.get(15576).then(person =>
         this.setState({person: person})
-      );
+      ).catch(error => this.setState({error: error}));
     }
 
     render() {
             return (
                 <div>
-                  <PersonalInformation person={this.state.person} />
+                  <PersonalInformation person={this.state.person} error={this.state.error} />
                 </div>
             );
       }

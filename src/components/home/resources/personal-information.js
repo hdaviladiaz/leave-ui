@@ -1,9 +1,13 @@
 import React from 'react';
 
-const PersonalInformation = ({person}) =>{
+const PersonalInformation = ({person, error}) =>{
+
+  if(error){
+    return(<div>There has been an error retrieving your information </div>);
+  }
 
   if(!person){
-   return(<div>There has been an error retrieving your information </div>);
+   return(<div>Loading ...</div>);
   }
 
   return(
