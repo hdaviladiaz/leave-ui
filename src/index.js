@@ -7,10 +7,14 @@ import Home from './components/home/home';
 import MedicalLeave from './components/medicalLeave/medicalLeave';
 import Vacation from './components/vacation/vacation';
 import registerServiceWorker from './registerServiceWorker';
+import axios from 'axios';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import './styles/index.css';
+import environment from './conf'
+
+axios.defaults.baseURL=environment().hostUrl;
 
 ReactDOM.render(
     <BrowserRouter >
