@@ -1,0 +1,9 @@
+{
+
+  "proxies": {
+    "/api/": {
+      "origin": "${API_URL}"
+    }
+  }
+
+}

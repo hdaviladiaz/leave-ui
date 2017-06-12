@@ -9,6 +9,7 @@ src/**/*.css
 
 # production
 /build
+!build/static.json
 
 # misc
 .DS_Store
