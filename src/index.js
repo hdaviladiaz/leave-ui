@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 import './styles/index.css';
 import environment from './conf'
 
-axios.defaults.baseURL=environment().hostUrl;
+//axios.defaults.baseURL=environment().hostUrl;
 
 ReactDOM.render(
     <BrowserRouter >
