@@ -2,7 +2,14 @@
   "name": "leave-ui",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3000",
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:3000",
+      "pathRewrite": {
+        "^/api": "/"
+      }
+    }
+  },
   "dependencies": {
     "axios": "^0.16.1",
     "bootstrap": "^3.3.7",
