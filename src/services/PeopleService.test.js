@@ -11,7 +11,7 @@ describe('PeopleService', () => {
 
     let personPromise = peopleService.get(personId);
 
-    expect(axios.get).toHaveBeenCalledWith('/people/' + personId);
+    expect(axios.get).toHaveBeenCalledWith('/api/people/' + personId);
   });
 
   it('should get person information', () => {
