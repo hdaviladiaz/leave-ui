@@ -13,8 +13,6 @@ import './styles/index.css';
 ReactDOM.render(
     <BrowserRouter >
         <App>
-            <h1>config: {environment().hostUrl}</h1>
-            <h1>env: {process.env.REACT_APP_ENV}</h1>
             <Route exact path="/" component={Home} />
         </App>
     </BrowserRouter>
