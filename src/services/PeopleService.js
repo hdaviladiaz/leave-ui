@@ -1,21 +1,12 @@
-import axios from 'axios';
+import RequestService from './requestService';
 
-export default class PeopleService {
+export default class PeopleService extends RequestService {
+
   get() {
-    return axios.get('http://localhost:3000/people/me',{
-      headers: {
-        'Token': localStorage.token
-    },
-     
-    })
-    .then(response => {
-      console.log(response)
-      return response.data
-    })
-    .catch(error =>	{
-      var redirectUrl="http://localhost:3000"+error.response.data;
-      window.location=redirectUrl;
-      // Promise.reject(error);
-    });    
+    var config = {
+      url: 'people/me',
+      method: 'GET'
+    }
+    return this.request(config);
   }
 }

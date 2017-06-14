@@ -17,7 +17,9 @@ export default class Home extends Component {
       let peopleService = new PeopleService();
       peopleService.get().then(person =>
         this.setState({person: person})
-      ).catch(error => this.setState({error: error}));
+      ).catch(error => {
+          this.setState({error: error})
+      });
     }
 
     render() {
