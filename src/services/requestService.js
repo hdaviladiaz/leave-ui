@@ -1,30 +1,25 @@
 import axios from 'axios';
+import environment from '../conf'
 
 export default class RequestService {
-
-    constructor() {
-        this.HOST = "http://localhost:3000"
-    }
-
-    request(config) {
-        return axios({
-            headers: { 'Token': localStorage.token },
-            method: config.method || 'GET',
-            url: config.url,
-            data: config.data,
-            baseURL: this.HOST
-        })
-        .then(response => {
-            return response.data
-        })
-        .catch(error => {
-            if (error.response.status === 303) {
-                var redirectUrl = this.HOST + error.response.data;
-                window.location = redirectUrl;
-            }
-            else {
-                return error;
-            }
-        });
-    }
+  request(config) {
+    return axios({
+        headers: { 'Token': localStorage.token || 'undefined' },
+        method: config.method || 'GET',
+        url: config.url,
+        data: config.data
+    })
+    .then(response => {
+        return response.data
+    })
+    .catch(error => {
+        if (error.response && error.response.status === 303) {
+            var redirectUrl = environment().hostUrl + error.response.data;
+            window.location = redirectUrl;
+        }
+        else {
+            return error;
+        }
+    });
+  }
 }

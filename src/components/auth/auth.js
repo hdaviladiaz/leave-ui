@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 export default class Auth extends Component {
     constructor(props) {
         super(props);
-        var token=this.props.match.params.token;
-        localStorage.token=token;
+        localStorage.token = this.props.match.params.token;
     }
     componentDidMount(){
        this.props.history.push('/')
