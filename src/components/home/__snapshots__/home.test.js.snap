@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders a snapshot 1`] = `
+<div>
+  <div
+    className="alert alert-info"
+    role="alert"
+  >
+    Recuperando información
+  </div>
+</div>
+`;
+
+exports[`Home should render eroor when person is resolved 1`] = `
+<div>
+  <div
+    className="alert alert-danger"
+    role="alert"
+  >
+    Hubo un error al consultar su información
+  </div>
+</div>
+`;
+
+exports[`Home should render people information when person is resolved 1`] = `
+<div>
+  <div>
+    <h2
+      className="home-personal-information"
+    >
+      Tu Información
+    </h2>
+    <div
+      className="row"
+    >
+      <div
+        className="col-lg-2"
+      >
+        <img
+          alt="foto personal"
+          src="https://jigsaw.thoughtworks.net/consultants/22118/show_picture?style=profile"
+        />
+      </div>
+      <div
+        className="col-lg-10"
+      >
+        <dl
+          className="dl-horizontal"
+        >
+          <dt>
+            Nombre
+          </dt>
+          <dd>
+            Viviana Perez
+          </dd>
+          <dt>
+            Correo Electrónico
+          </dt>
+          <dd>
+            @thoughtworks.com
+          </dd>
+          <dt>
+            Oficina base
+          </dt>
+          <dd>
+            Quito
+          </dd>
+          <dt>
+            Oficina actual
+          </dt>
+          <dd>
+            Pune
+          </dd>
+          <dt>
+            Fecha de contratación
+          </dt>
+          <dd>
+            2013-08-05
+          </dd>
+          <dt>
+            Días disponibles
+          </dt>
+          <dd />
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+`;
