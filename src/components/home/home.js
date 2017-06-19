@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import PeopleService from '../../services/PeopleService';
 import './home.css';
-import PersonalInformation from './resources/personal-information.js'
+import PersonalInformation from '../personal-information/personal-information.js'
 
 export default class Home extends Component {
 
