@@ -1,4 +1,4 @@
-import RequestService from './RequestService';
+import RequestService from './requestService';
 
 export default class PeopleService extends RequestService {
   static instance;

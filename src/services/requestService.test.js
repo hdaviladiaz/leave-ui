@@ -1,4 +1,4 @@
-import RequestService from './RequestService';
+import RequestService from './requestService';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import environment from '../conf'

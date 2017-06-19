@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import PeopleService from '../../services/PeopleService';
+import PeopleService from '../../services/peopleService';
 import './home.css';
 import PersonalInformation from '../personal-information/personal-information.js'
 

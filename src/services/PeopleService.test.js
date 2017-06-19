@@ -1,4 +1,4 @@
-import PeopleService from './PeopleService';
+import PeopleService from './peopleService';
 import axios from 'axios';
 
 describe('PeopleService', () => {
