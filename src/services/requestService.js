@@ -8,18 +8,18 @@ export default class RequestService {
             method: config.method || 'GET',
             url: config.url,
             data: config.data
-        })
-            .then(response => {
+        }).then(response => {
                 return response.data
             })
-            .catch(error => {
-                if (error.response && error.response.status === 303) {
-                    var url = environment().hostUrl + error.response.data;
-                    this.redirect(url);
-                }
-                return error;
-            });
+          .catch(error => {
+              if (error.response && error.response.status === 303) {
+                  var url = environment().hostUrl + error.response.data;
+                  this.redirect(url);
+              }
+              return error;
+          });
     }
+    
     redirect(url) {
         window.location = url;
     }

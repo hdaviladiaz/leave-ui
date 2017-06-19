@@ -11,7 +11,7 @@ exports[`Home renders a snapshot 1`] = `
 </div>
 `;
 
-exports[`Home should render eroor when person is resolved 1`] = `
+exports[`Home should render error when person is resolved 1`] = `
 <div>
   <div
     className="alert alert-danger"
@@ -25,11 +25,11 @@ exports[`Home should render eroor when person is resolved 1`] = `
 exports[`Home should render people information when person is resolved 1`] = `
 <div>
   <div>
-    <h2
+    <h3
       className="home-personal-information"
     >
       Tu Información
-    </h2>
+    </h3>
     <div
       className="row"
     >

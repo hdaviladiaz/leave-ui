@@ -12,8 +12,13 @@ describe('PersonalInformation', () => {
                 "homeOffice":{"name":"Quito"},
                 "workingOffice":{"name":"Pune"}}
 
-  it('should render without crashing', () => {
+  it('should render personal information when person', () => {
     const wrapper = shallow(<PersonalInformation person={vivi} error={false} />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render personal information when error', () => {
+    const wrapper = shallow(<PersonalInformation person={null} error={true} />);
     expect(wrapper).toMatchSnapshot();
   });
 

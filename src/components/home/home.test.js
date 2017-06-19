@@ -5,9 +5,6 @@ import Home from './home';
 import PeopleService from '../../services/PeopleService';
 import renderer from 'react-test-renderer';
 jest.mock('react-dom');
-var axios = require('axios');
-var MockAdapter = require('axios-mock-adapter');
-var mock = new MockAdapter(axios);
 
 describe('Home', () => {
 
@@ -45,7 +42,7 @@ describe('Home', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  it('should render eroor when person is resolved', () => {
+  it('should render error when person is resolved', () => {
     const component = renderer.create(<Home/>);
     component.getInstance().setState({error: {}});
     expect(component.toJSON()).toMatchSnapshot();

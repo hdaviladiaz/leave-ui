@@ -19,7 +19,7 @@ const PersonalInformation = ({person, error}) =>{
 
   return(
     <div>
-    <h2 className="home-personal-information">Tu Información</h2>
+    <h3 className="home-personal-information">Tu Información</h3>
     <div className="row">
         <div className="col-lg-2">
             <img src={person.picture.url} alt="foto personal"/>

@@ -6,26 +6,26 @@ import PersonalInformation from '../personal-information/personal-information.js
 
 export default class Home extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            people: null
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      people: null,
+      person: null,
+      eror: null
+    };
+  }
 
-    componentDidMount() {
-      PeopleService.getInstance().getLoggedUserInformation().then(person =>
-        this.setState({person: person})
-      ).catch(error => {
-          this.setState({error: error})
-      });
-    }
+  componentDidMount() {
+    PeopleService.getInstance().getLoggedUserInformation().then(person => this.setState({person: person})).catch(error => {
+      this.setState({error: error})
+    });
+  }
 
-    render() {
-            return (
-                <div>
-                  <PersonalInformation person={this.state.person} error={this.state.error} />
-                </div>
-            );
-      }
+  render() {
+    return (
+      <div>
+        <PersonalInformation person={this.state.person} error={this.state.error}/>
+      </div>
+    );
+  }
 }
