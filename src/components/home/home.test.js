@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import Home from './home';
-import PeopleService from '../../services/PeopleService';
+import PeopleService from '../../services/peopleService';
 import renderer from 'react-test-renderer';
 jest.mock('react-dom');
 
