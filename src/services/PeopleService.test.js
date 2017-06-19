@@ -2,50 +2,40 @@ import PeopleService from './PeopleService';
 import axios from 'axios';
 
 describe('PeopleService', () => {
-
-  beforeEach(function () {
-    window.localStorage = storageMock();
+  let peopleService;
+  beforeEach(() => {
+    peopleService = PeopleService.getInstance();
+  });
+  afterEach(() => {
+    jest.resetAllMocks();
   });
 
-  function storageMock() {
-    var storage = {};
 
-    return {
-      setItem: function(key, value) {
-        storage[key] = value || '';
-      },
-      getItem: function(key) {
-        return key in storage ? storage[key] : null;
-      }
-    };
-  }
-
-  xit('should call correct endpoint', () => {
-    const expected = {data: [Math.random()]};
-    axios.get = jest.fn(() => new Promise(resolve => resolve(expected)));
-
-    let peopleService = new PeopleService();
-    let personPromise = peopleService.get();
-
-    expect(axios.get).toHaveBeenCalledWith('http://localhost:3000/people/me');
+  it('should call correct endpoint when getLoggedUserInformation is called', () => {
+    let expectedUrl = "people/me";
+    peopleService.request = jest.fn((config) => {
+      return config.url;
+    })
+    let resolvedUrl = peopleService.getLoggedUserInformation();
+    return expect(resolvedUrl).toEqual(expectedUrl);
   });
 
   xit('should get person information', () => {
-    let expected = {data: [Math.random()]};
-    axios.get = jest.fn(() => new Promise(resolve => resolve(expected)));
-    let peopleService = new PeopleService();
-    let personPromise = peopleService.get();
-
-    expect(personPromise).resolves.toBe(expected.data[0]);
+    const expectedPerson = { data: [Math.random()] };
+    peopleService.getLoggedUserInformation = jest.fn(() => {
+      return expectedPerson;
+    })
+    let resolvedPerson = peopleService.getLoggedUserInformation();
+    return expect(resolvedPerson).toEqual(expectedPerson);
   });
 
   xit('should return an error object when an error ocurred in server', () => {
-    const expected = {status: Math.random()};
-    axios.get = jest.fn(() => new Promise((resolve, reject) => reject(expected)));
-    let peopleService = new PeopleService();
-    let personPromise = peopleService.get();
-
-    expect(personPromise).rejects.toEqual(expected);
+    const expectedError = { status: Math.random()};
+    peopleService.getLoggedUserInformation = jest.fn(() => {
+      return expectedError;
+    })
+    let resolvedPerson = peopleService.getLoggedUserInformation();
+    return expect(resolvedPerson).toEqual(expectedError);
   });
 
 });
