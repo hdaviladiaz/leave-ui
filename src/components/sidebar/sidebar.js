@@ -28,10 +28,10 @@ export default class Sidebar extends Component {
       <div className="display-inline">
         <div className="sidebar-content">
           <div className="col-lg-12 text-center p-md">
-            <div>
+            <div className='logo'>
               LOGO
             </div>
-            <div>
+            <div className='logo'>
               VACAS
             </div>
           </div>
