@@ -5,7 +5,7 @@ export default class Footer extends Component {
   render() {
     return (
       <div className="footer">
-        Thoughtworks 2017
+        &copy; Thoughtworks 2017
       </div>
     );
   }
