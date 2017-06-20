@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import App from './components/app/app';
-import Home from './components/home/home';
+import LeaveDashboard from './components/leave-dashboard/leave-dashboard';
 import Auth from './components/auth/auth';
 import registerServiceWorker from './registerServiceWorker';
 import axios from 'axios';
@@ -19,7 +19,7 @@ axios.defaults.baseURL = environment().hostUrl;
 ReactDOM.render(
     <BrowserRouter >
         <App>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={LeaveDashboard} />
             <Route exact path="/auth/:token" component={Auth} />
         </App>
     </BrowserRouter>

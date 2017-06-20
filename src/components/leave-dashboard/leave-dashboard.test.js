@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import Home from './home';
+import LeaveDashboard from './leave-dashboard';
 import PeopleService from '../../services/peopleService';
 import renderer from 'react-test-renderer';
 jest.mock('react-dom');
 
-describe('Home', () => {
+describe('LeaveDashboard', () => {
 
   beforeEach(function () {
     window.localStorage = storageMock();
@@ -32,18 +32,18 @@ describe('Home', () => {
   }
 
   it('renders a snapshot', () => {
-    const tree = renderer.create(<Home/>).toJSON();
+    const tree = renderer.create(<LeaveDashboard/>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render people information when person is resolved', () => {
-    const component = renderer.create(<Home/>);
+    const component = renderer.create(<LeaveDashboard/>);
     component.getInstance().setState({person: vivi});
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   it('should render error when person is resolved', () => {
-    const component = renderer.create(<Home/>);
+    const component = renderer.create(<LeaveDashboard/>);
     component.getInstance().setState({error: {}});
     expect(component.toJSON()).toMatchSnapshot();
   });
