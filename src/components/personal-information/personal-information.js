@@ -25,7 +25,7 @@ const PersonalInformation = ({person, error}) =>{
       </div>
       <div className="col-lg-9">
         <p>{person.preferredName}</p>
-        <p>{person.hireDate}</p>
+        <p>TWer from {person.hireDate}</p>
       </div>
     </div>
   );
