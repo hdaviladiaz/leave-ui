@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import {Button} from 'react-bootstrap';
-import PropTypes from 'prop-types';
 
-import Footer from '../footer/footer.js'
-import PersonalInformation from '../personal-information/personal-information.js'
+import Footer from '../footer/footer.js';
+import PersonalInformation from '../personal-information/personal-information.js';
+import Navigation from '../navigation/navigation.js';
 import PeopleService from '../../services/peopleService';
 
-class Sidebar extends Component {
+export default class Sidebar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,11 +20,6 @@ class Sidebar extends Component {
     });
   }
 
-  checkActive(href) {
-    var isActive = this.context.router.route.location.pathname === href;
-    return isActive ? 'disabled' : '';
-  }
-
   render() {
     return (
       <div>
@@ -38,18 +32,9 @@ class Sidebar extends Component {
           </div>
         </div>
         <PersonalInformation person={this.state.person} error={this.state.error}/>
-        <div className="col-lg-12">
-          <Button block href="/" className={this.checkActive("/")}>Mis Vacaciones</Button>
-          <Button block>Cerrar Sesión</Button>
-        </div>
+        <Navigation />
         <Footer />
       </div>
     );
   }
 }
-
-Sidebar.contextTypes = {
-  router: PropTypes.object
-};
-
-export default Sidebar;
