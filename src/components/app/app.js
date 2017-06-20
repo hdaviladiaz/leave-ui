@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
+import Sidebar from '../sidebar/sidebar'
+import {Col} from 'react-bootstrap';
 import './app.css';
-import Menu from '../menu/menu'
 
 export default class App extends Component {
   render() {
     return (
-
-      <div className="app">
-        <Menu />
-        <div className="container">
+      <div className="app fill">
+        <Col xs={3}>
+          <Sidebar />
+        </Col>
+        <Col xs={9} className="bg-color">
           {this.props.children}
-        </div>
+        </Col>
       </div>
-
     );
   }
 }
