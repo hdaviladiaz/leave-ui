@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render LeaveRequest as snapshot 1`] = `
+<div
+  className="leave-request panel panel-default"
+  id={undefined}
+>
+  <div
+    className="panel-body"
+  >
+    LEAVE REQUEST
+  </div>
+</div>
+`;

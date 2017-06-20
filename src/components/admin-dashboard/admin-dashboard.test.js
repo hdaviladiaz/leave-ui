@@ -1,7 +1,8 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import AdminDashboard from './admin-dashboard';
+import renderer from 'react-test-renderer';
 
-it('should render AdminDashboard without crashing', () => {
-  shallow(<AdminDashboard />);
+it('should render AdminDashboard as snapshot', () => {
+  const tree = renderer.create(<AdminDashboard/>).toJSON();
+  expect(tree).toMatchSnapshot();
 });

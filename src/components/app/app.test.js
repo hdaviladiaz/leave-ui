@@ -1,7 +1,8 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import App from './app';
+import renderer from 'react-test-renderer';
 
-it('should render App without crashing', () => {
-  shallow(<App />);
+xit('should render App as snapshot', () => {
+  const tree = renderer.create(<App/>).toJSON();
+  expect(tree).toMatchSnapshot();
 });

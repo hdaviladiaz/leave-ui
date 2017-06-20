@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render AdminDashboard as snapshot 1`] = `
+<div>
+  <div
+    className="panel panel-default"
+    id={undefined}
+  >
+    <div
+      className="panel-body"
+    >
+      ADMIN OVERVIEW
+    </div>
+  </div>
+  <div
+    className="manage-leave-request panel panel-default"
+    id={undefined}
+  >
+    <div
+      className="panel-body"
+    >
+      ADMIN LEAVE REQUEST
+    </div>
+  </div>
+</div>
+`;

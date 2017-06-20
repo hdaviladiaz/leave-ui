@@ -1,7 +1,8 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import AdminOverview from './admin-overview';
+import renderer from 'react-test-renderer';
 
-it('should render AdminOverview without crashing', () => {
-  shallow(<AdminOverview />);
+it('should render AdminOverview as snapshot', () => {
+  const tree = renderer.create(<AdminOverview/>).toJSON();
+  expect(tree).toMatchSnapshot();
 });
