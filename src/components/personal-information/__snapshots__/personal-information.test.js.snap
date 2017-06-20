@@ -105,127 +105,51 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <div>
-    <h3
-        className="home-personal-information"
-    >
-        Tu Información
-    </h3>
+  "node": <div
+    className="personal-container col-lg-12"
+>
     <div
-        className="row"
+        className="col-lg-3 no-padding"
     >
-        <div
-            className="col-lg-2"
-        >
-            <img
-                alt="foto personal"
-                src="https://jigsaw.thoughtworks.net/consultants/22118/show_picture?style=profile"
-            />
-        </div>
-        <div
-            className="col-lg-10"
-        >
-            <dl
-                className="dl-horizontal"
-            >
-                <dt>
-                    Nombre
-                </dt>
-                <dd>
-                    Viviana Perez
-                </dd>
-                <dt>
-                    Correo Electrónico
-                </dt>
-                <dd>
-                    @thoughtworks.com
-                </dd>
-                <dt>
-                    Oficina base
-                </dt>
-                <dd>
-                    Quito
-                </dd>
-                <dt>
-                    Oficina actual
-                </dt>
-                <dd>
-                    Pune
-                </dd>
-                <dt>
-                    Fecha de contratación
-                </dt>
-                <dd>
-                    2013-08-05
-                </dd>
-                <dt>
-                    Días disponibles
-                </dt>
-                <dd />
-            </dl>
-        </div>
+        <img
+            alt="foto personal"
+            className="img-picture"
+            src="https://jigsaw.thoughtworks.net/consultants/22118/show_picture?style=profile"
+        />
+    </div>
+    <div
+        className="col-lg-9"
+    >
+        <p>
+            Viviana Perez
+        </p>
+        <p>
+            2013-08-05
+        </p>
     </div>
 </div>,
   "nodes": Array [
-    <div>
-      <h3
-            className="home-personal-information"
-      >
-            Tu Información
-      </h3>
+    <div
+      className="personal-container col-lg-12"
+>
       <div
-            className="row"
+            className="col-lg-3 no-padding"
       >
-            <div
-                  className="col-lg-2"
-            >
-                  <img
-                        alt="foto personal"
-                        src="https://jigsaw.thoughtworks.net/consultants/22118/show_picture?style=profile"
-                  />
-            </div>
-            <div
-                  className="col-lg-10"
-            >
-                  <dl
-                        className="dl-horizontal"
-                  >
-                        <dt>
-                              Nombre
-                        </dt>
-                        <dd>
-                              Viviana Perez
-                        </dd>
-                        <dt>
-                              Correo Electrónico
-                        </dt>
-                        <dd>
-                              @thoughtworks.com
-                        </dd>
-                        <dt>
-                              Oficina base
-                        </dt>
-                        <dd>
-                              Quito
-                        </dd>
-                        <dt>
-                              Oficina actual
-                        </dt>
-                        <dd>
-                              Pune
-                        </dd>
-                        <dt>
-                              Fecha de contratación
-                        </dt>
-                        <dd>
-                              2013-08-05
-                        </dd>
-                        <dt>
-                              Días disponibles
-                        </dt>
-                        <dd />
-                  </dl>
-            </div>
+            <img
+                  alt="foto personal"
+                  className="img-picture"
+                  src="https://jigsaw.thoughtworks.net/consultants/22118/show_picture?style=profile"
+            />
+      </div>
+      <div
+            className="col-lg-9"
+      >
+            <p>
+                  Viviana Perez
+            </p>
+            <p>
+                  2013-08-05
+            </p>
       </div>
 </div>,
   ],
@@ -297,127 +221,51 @@ ShallowWrapper {
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div>
-          <h3
-                    className="home-personal-information"
-          >
-                    Tu Información
-          </h3>
+        "_currentElement": <div
+          className="personal-container col-lg-12"
+>
           <div
-                    className="row"
+                    className="col-lg-3 no-padding"
           >
-                    <div
-                              className="col-lg-2"
-                    >
-                              <img
-                                        alt="foto personal"
-                                        src="https://jigsaw.thoughtworks.net/consultants/22118/show_picture?style=profile"
-                              />
-                    </div>
-                    <div
-                              className="col-lg-10"
-                    >
-                              <dl
-                                        className="dl-horizontal"
-                              >
-                                        <dt>
-                                                  Nombre
-                                        </dt>
-                                        <dd>
-                                                  Viviana Perez
-                                        </dd>
-                                        <dt>
-                                                  Correo Electrónico
-                                        </dt>
-                                        <dd>
-                                                  @thoughtworks.com
-                                        </dd>
-                                        <dt>
-                                                  Oficina base
-                                        </dt>
-                                        <dd>
-                                                  Quito
-                                        </dd>
-                                        <dt>
-                                                  Oficina actual
-                                        </dt>
-                                        <dd>
-                                                  Pune
-                                        </dd>
-                                        <dt>
-                                                  Fecha de contratación
-                                        </dt>
-                                        <dd>
-                                                  2013-08-05
-                                        </dd>
-                                        <dt>
-                                                  Días disponibles
-                                        </dt>
-                                        <dd />
-                              </dl>
-                    </div>
+                    <img
+                              alt="foto personal"
+                              className="img-picture"
+                              src="https://jigsaw.thoughtworks.net/consultants/22118/show_picture?style=profile"
+                    />
+          </div>
+          <div
+                    className="col-lg-9"
+          >
+                    <p>
+                              Viviana Perez
+                    </p>
+                    <p>
+                              2013-08-05
+                    </p>
           </div>
 </div>,
         "_debugID": 2,
-        "_renderedOutput": <div>
-          <h3
-                    className="home-personal-information"
-          >
-                    Tu Información
-          </h3>
+        "_renderedOutput": <div
+          className="personal-container col-lg-12"
+>
           <div
-                    className="row"
+                    className="col-lg-3 no-padding"
           >
-                    <div
-                              className="col-lg-2"
-                    >
-                              <img
-                                        alt="foto personal"
-                                        src="https://jigsaw.thoughtworks.net/consultants/22118/show_picture?style=profile"
-                              />
-                    </div>
-                    <div
-                              className="col-lg-10"
-                    >
-                              <dl
-                                        className="dl-horizontal"
-                              >
-                                        <dt>
-                                                  Nombre
-                                        </dt>
-                                        <dd>
-                                                  Viviana Perez
-                                        </dd>
-                                        <dt>
-                                                  Correo Electrónico
-                                        </dt>
-                                        <dd>
-                                                  @thoughtworks.com
-                                        </dd>
-                                        <dt>
-                                                  Oficina base
-                                        </dt>
-                                        <dd>
-                                                  Quito
-                                        </dd>
-                                        <dt>
-                                                  Oficina actual
-                                        </dt>
-                                        <dd>
-                                                  Pune
-                                        </dd>
-                                        <dt>
-                                                  Fecha de contratación
-                                        </dt>
-                                        <dd>
-                                                  2013-08-05
-                                        </dd>
-                                        <dt>
-                                                  Días disponibles
-                                        </dt>
-                                        <dd />
-                              </dl>
-                    </div>
+                    <img
+                              alt="foto personal"
+                              className="img-picture"
+                              src="https://jigsaw.thoughtworks.net/consultants/22118/show_picture?style=profile"
+                    />
+          </div>
+          <div
+                    className="col-lg-9"
+          >
+                    <p>
+                              Viviana Perez
+                    </p>
+                    <p>
+                              2013-08-05
+                    </p>
           </div>
 </div>,
       },
