@@ -16,9 +16,11 @@ export default class Sidebar extends Component {
   }
 
   componentDidMount() {
-    PeopleService.getInstance().getLoggedUserInformation().then(person => this.setState({person: person})).catch(error => {
-      this.setState({error: error})
-    });
+    PeopleService
+        .getInstance()
+        .getLoggedUserInformation()
+        .then(person => this.setState({person: person}))
+        .catch(error => this.setState({error: error}));
   }
 
   render() {
