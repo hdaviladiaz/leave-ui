@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import './sidebar.css';
 import Footer from '../footer/footer.js';
 import PersonalInformation from '../personal-information/personal-information.js';
 import Navigation from '../navigation/navigation.js';
@@ -22,17 +23,20 @@ export default class Sidebar extends Component {
 
   render() {
     return (
-      <div>
-        <div className="col-lg-12 text-center p-md">
-          <div>
-            LOGO
+      <div className="display-inline">
+        <div className="sidebar-content">
+          <div className="col-lg-12 text-center p-md">
+            <div>
+              LOGO
+            </div>
+            <div>
+              VACAS
+            </div>
           </div>
-          <div>
-            VACAS
-          </div>
+          <PersonalInformation person={this.state.person} error={this.state.error}/>
+          <Navigation />
+          <div className="push col-lg-12"></div>
         </div>
-        <PersonalInformation person={this.state.person} error={this.state.error}/>
-        <Navigation />
         <Footer />
       </div>
     );
