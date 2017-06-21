@@ -8,7 +8,7 @@ export default class LeaveDashboard extends Component {
   render() {
     return (
       <div>
-        <Overview/>
+        <Overview days={15} lastRequest={'15-06-2017'}/>
         <LeaveRequest/>
       </div>
     );

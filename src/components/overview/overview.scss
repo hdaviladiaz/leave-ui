@@ -1,0 +1,41 @@
+.overview-box{
+    height: 120px;
+    border-width: 0 1px 0 0;
+    border-style: solid;
+    -webkit-border-image: -webkit-gradient(linear, 0 100%, 0 0, from(#ccc), to(rgba(0, 0, 0, 0))) 1 100%;
+    -webkit-border-image: -webkit-linear-gradient(bottom, black, rgba(0, 0, 0, 0)) 1 100%;
+    -moz-border-image: -moz-linear-gradient(bottom, #ccc, rgba(0, 0, 0, 0)) 1 100%;
+    -o-border-image: -o-linear-gradient(bottom, #ccc, rgba(0, 0, 0, 0)) 1 100%;
+    border-image: linear-gradient(to top, #ccc, rgba(0, 0, 0, 0)) 1 100%;
+}
+.overview-box-center{
+    text-align: center;
+    line-height: 120px;
+}
+.last{
+    border: 0 !important;
+}
+.overview-box-container{
+    margin-top: 20px;
+}
+
+.overview-box-header{
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #ccc;
+}
+.overview-box-title{
+    font-size: 55px;
+    line-height: 60px;
+}
+.overview h4{
+    line-height: 0.3;
+}
+
+.overview-box-body{
+    margin-top: 10px;
+}
+
+.text-muted{
+    font-size: 15px;
+}
