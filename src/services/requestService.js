@@ -24,6 +24,7 @@ export default class RequestService {
     }
     isAdmin() {
         var token = localStorage.token;
+        if(!token)return false;
         return token[token.length - 1] === '1';
     }
 }

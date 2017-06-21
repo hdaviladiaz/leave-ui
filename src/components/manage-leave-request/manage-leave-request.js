@@ -7,7 +7,7 @@ export default class ManageLeaveRequest extends Component {
   render(){
     return(
       <Panel className='manage-leave-request'>
-        ADMIN LEAVE REQUEST
+        <h4>Solicitudes</h4>
       </Panel>
     );
   }
