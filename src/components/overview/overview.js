@@ -4,7 +4,6 @@ import moment from 'moment';
 import 'moment/locale/es';
 import "./overview.css"
 
-
 export default class Overview extends Component {
 
   constructor(props) {
@@ -21,15 +20,16 @@ export default class Overview extends Component {
     return (
       <Panel>
         <div className="overview">
-          <h4>{this.today}</h4>
-          <span className="text-muted">{this.props.days} dias disponibles</span>
-          <div className="overview-box-container">
+          <Col xs={12}>
+            <h4>{this.today}</h4>
+            <span className="text-muted">{this.props.days} dias disponibles</span>
+          </Col>
+          <Col xs={12} className="overview-box-container no-padding">
             <Col md={4} className="overview-box">
               <div className="overview-box-header gray-color">D&iacute;as Disponibles</div>
               <div className="overview-box-body">
                 <div className="overview-box-title">{this.props.days}</div>
               </div>
-
             </Col>
             <Col md={4} className="overview-box">
               <div className="overview-box-header">&Uacute;ltima solicitud</div>
@@ -41,7 +41,7 @@ export default class Overview extends Component {
             <Col md={4} className="overview-box last overview-box-center">
               <a className="btn btn-primary">Solicitar Ahora</a>
             </Col>
-          </div>
+          </Col>
         </div>
       </Panel>
     );
