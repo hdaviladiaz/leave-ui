@@ -56,7 +56,7 @@ exports[`LeaveDashboard renders a snapshot 1`] = `
               <div
                 className="overview-box-title"
               >
-                 6 días
+                 7 días
               </div>
               <div
                 className="text-muted"
@@ -147,7 +147,7 @@ exports[`LeaveDashboard should render error when person is resolved 1`] = `
               <div
                 className="overview-box-title"
               >
-                 6 días
+                 7 días
               </div>
               <div
                 className="text-muted"
@@ -238,7 +238,7 @@ exports[`LeaveDashboard should render people information when person is resolved
               <div
                 className="overview-box-title"
               >
-                 6 días
+                 7 días
               </div>
               <div
                 className="text-muted"

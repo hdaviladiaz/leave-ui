@@ -9,18 +9,21 @@ export default class RequestService {
             url: config.url,
             data: config.data
         }).then(response => {
-                return response.data
-            })
-          .catch(error => {
-              if (error.response && error.response.status === 303) {
-                  var url = environment().hostUrl + error.response.data;
-                  this.redirect(url);
-              }
-              return error;
-          });
+            return response.data
+        })
+            .catch(error => {
+                if (error.response && error.response.status === 303) {
+                    var url = environment().hostUrl + error.response.data;
+                    this.redirect(url);
+                }
+                return error;
+            });
     }
-    
     redirect(url) {
         window.location = url;
+    }
+    isAdmin() {
+        var token = localStorage.token;
+        return token[token.length - 1] === '1';
     }
 }
