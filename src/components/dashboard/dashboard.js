@@ -3,7 +3,6 @@ import { Route} from 'react-router-dom'
 import AdminDashboard from '../admin-dashboard/admin-dashboard';
 import LeaveDashboard from '../leave-dashboard/leave-dashboard';
 import Auth from '../auth/auth';
-
 const routes = [
   { path: '/',
     exact: true,
@@ -19,7 +18,6 @@ const routes = [
   }
 ]
 export default class Dashboard extends React.Component {
-
     render() {
     return (
         <div >

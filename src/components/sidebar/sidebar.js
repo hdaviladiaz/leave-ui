@@ -28,15 +28,10 @@ export default class Sidebar extends Component {
       <div className="display-inline">
         <div className="sidebar-content">
           <div className="col-lg-12 text-center p-md">
-            <div className='logo'>
-              LOGO
-            </div>
-            <div className='logo'>
-              VACAS
-            </div>
+            <img alt="" src={'img/logo.png'} className="logo-Image" />
+            <PersonalInformation person={this.state.person} error={this.state.error} />
+            <Navigation isAdmin={this.peopleService.isAdmin()} />
           </div>
-          <PersonalInformation person={this.state.person} error={this.state.error} />
-          <Navigation isAdmin={this.peopleService.isAdmin()}/>
           <div className="push col-lg-12"></div>
         </div>
         <Footer />
