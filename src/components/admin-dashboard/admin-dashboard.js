@@ -8,7 +8,7 @@ export default class AdminDashboard extends Component {
   render() {
     return (
       <div>
-        <AdminOverview/>
+        <AdminOverview days={15} pendingRequets={3}/>
         <ManageLeaveRequest/>
       </div>
     );
