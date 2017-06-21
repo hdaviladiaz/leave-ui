@@ -85,7 +85,11 @@ exports[`LeaveDashboard renders a snapshot 1`] = `
     <div
       className="panel-body"
     >
-      LEAVE REQUEST
+      <img
+        alt=""
+        className="back-image"
+        src="img/back.png"
+      />
     </div>
   </div>
 </div>
@@ -176,7 +180,11 @@ exports[`LeaveDashboard should render error when person is resolved 1`] = `
     <div
       className="panel-body"
     >
-      LEAVE REQUEST
+      <img
+        alt=""
+        className="back-image"
+        src="img/back.png"
+      />
     </div>
   </div>
 </div>
@@ -267,7 +275,11 @@ exports[`LeaveDashboard should render people information when person is resolved
     <div
       className="panel-body"
     >
-      LEAVE REQUEST
+      <img
+        alt=""
+        className="back-image"
+        src="img/back.png"
+      />
     </div>
   </div>
 </div>
