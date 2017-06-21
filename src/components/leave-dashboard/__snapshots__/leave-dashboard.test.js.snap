@@ -28,7 +28,7 @@ exports[`LeaveDashboard renders a snapshot 1`] = `
             className="overview-box col-md-4"
           >
             <div
-              className="overview-box-header"
+              className="overview-box-header gray-color"
             >
               Días Disponibles
             </div>
@@ -79,7 +79,7 @@ exports[`LeaveDashboard renders a snapshot 1`] = `
     </div>
   </div>
   <div
-    className="leave-request panel panel-default"
+    className="leave-request text-center panel panel-default"
     id={undefined}
   >
     <div
@@ -90,6 +90,11 @@ exports[`LeaveDashboard renders a snapshot 1`] = `
         className="back-image"
         src="img/back.png"
       />
+      <h4
+        className="gray-color"
+      >
+        No has solicitado vacaciones
+      </h4>
     </div>
   </div>
 </div>
@@ -123,7 +128,7 @@ exports[`LeaveDashboard should render error when person is resolved 1`] = `
             className="overview-box col-md-4"
           >
             <div
-              className="overview-box-header"
+              className="overview-box-header gray-color"
             >
               Días Disponibles
             </div>
@@ -174,7 +179,7 @@ exports[`LeaveDashboard should render error when person is resolved 1`] = `
     </div>
   </div>
   <div
-    className="leave-request panel panel-default"
+    className="leave-request text-center panel panel-default"
     id={undefined}
   >
     <div
@@ -185,6 +190,11 @@ exports[`LeaveDashboard should render error when person is resolved 1`] = `
         className="back-image"
         src="img/back.png"
       />
+      <h4
+        className="gray-color"
+      >
+        No has solicitado vacaciones
+      </h4>
     </div>
   </div>
 </div>
@@ -218,7 +228,7 @@ exports[`LeaveDashboard should render people information when person is resolved
             className="overview-box col-md-4"
           >
             <div
-              className="overview-box-header"
+              className="overview-box-header gray-color"
             >
               Días Disponibles
             </div>
@@ -269,7 +279,7 @@ exports[`LeaveDashboard should render people information when person is resolved
     </div>
   </div>
   <div
-    className="leave-request panel panel-default"
+    className="leave-request text-center panel panel-default"
     id={undefined}
   >
     <div
@@ -280,6 +290,11 @@ exports[`LeaveDashboard should render people information when person is resolved
         className="back-image"
         src="img/back.png"
       />
+      <h4
+        className="gray-color"
+      >
+        No has solicitado vacaciones
+      </h4>
     </div>
   </div>
 </div>

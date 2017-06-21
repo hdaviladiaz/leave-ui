@@ -26,7 +26,7 @@ exports[`should render Overview as snapshot 1`] = `
           className="overview-box col-md-4"
         >
           <div
-            className="overview-box-header"
+            className="overview-box-header gray-color"
           >
             Días Disponibles
           </div>

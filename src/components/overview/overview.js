@@ -25,7 +25,7 @@ export default class Overview extends Component {
           <span className="text-muted">{this.props.days} dias disponibles</span>
           <div className="overview-box-container">
             <Col md={4} className="overview-box">
-              <div className="overview-box-header">D&iacute;as Disponibles</div>
+              <div className="overview-box-header gray-color">D&iacute;as Disponibles</div>
               <div className="overview-box-body">
                 <div className="overview-box-title">{this.props.days}</div>
               </div>

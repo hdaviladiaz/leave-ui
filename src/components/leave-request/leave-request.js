@@ -16,6 +16,7 @@ export default class LeaveRequest extends Component {
             return (
           <Panel className="leave-request text-center">
             <img alt="" src={'img/back.png'}  className="back-image"/>
+            <h4 className="gray-color">No has solicitado vacaciones</h4>
           </Panel>
         );
       }
