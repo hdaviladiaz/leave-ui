@@ -70,6 +70,11 @@ describe('requestService', () => {
       let resolvedResult = requestService.isAdmin();
       return expect(resolvedResult).toEqual(false);
     });
+
+    it('should return false when token does not exist', () => {
+      let resolvedResult = requestService.isAdmin();
+      return expect(resolvedResult).toEqual(false);
+    });
   })
 
 

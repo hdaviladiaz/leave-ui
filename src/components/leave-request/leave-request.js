@@ -4,10 +4,7 @@ import './leave-request.css';
 import {_} from 'underscore';
 
 export default class LeaveRequest extends Component {
-  constructor(props) {
-      super(props);
-  }
-
+  
   render() {
     if(_.isEmpty(this.props.leaves) ||
        _.isNull(this.props.leaves) ||
