@@ -9,7 +9,73 @@ exports[`LeaveDashboard renders a snapshot 1`] = `
     <div
       className="panel-body"
     >
-      OVERVIEW
+      <div
+        className="overview"
+      >
+        <h4>
+          21 junio 2017
+        </h4>
+        <span
+          className="text-muted"
+        >
+          15
+           dias disponibles
+        </span>
+        <div
+          className="overview-box-container"
+        >
+          <div
+            className="overview-box col-md-4"
+          >
+            <div
+              className="overview-box-header"
+            >
+              Días Disponibles
+            </div>
+            <div
+              className="overview-box-body"
+            >
+              <div
+                className="overview-box-title"
+              >
+                15
+              </div>
+            </div>
+          </div>
+          <div
+            className="overview-box col-md-4"
+          >
+            <div
+              className="overview-box-header"
+            >
+              Última solicitud
+            </div>
+            <div
+              className="overview-box-body"
+            >
+              <div
+                className="overview-box-title"
+              >
+                 6 días
+              </div>
+              <div
+                className="text-muted"
+              >
+                15-06-2017
+              </div>
+            </div>
+          </div>
+          <div
+            className="overview-box last overview-box-center col-md-4"
+          >
+            <a
+              className="btn btn-primary"
+            >
+              Solicitar Ahora
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div
@@ -34,7 +100,73 @@ exports[`LeaveDashboard should render error when person is resolved 1`] = `
     <div
       className="panel-body"
     >
-      OVERVIEW
+      <div
+        className="overview"
+      >
+        <h4>
+          21 junio 2017
+        </h4>
+        <span
+          className="text-muted"
+        >
+          15
+           dias disponibles
+        </span>
+        <div
+          className="overview-box-container"
+        >
+          <div
+            className="overview-box col-md-4"
+          >
+            <div
+              className="overview-box-header"
+            >
+              Días Disponibles
+            </div>
+            <div
+              className="overview-box-body"
+            >
+              <div
+                className="overview-box-title"
+              >
+                15
+              </div>
+            </div>
+          </div>
+          <div
+            className="overview-box col-md-4"
+          >
+            <div
+              className="overview-box-header"
+            >
+              Última solicitud
+            </div>
+            <div
+              className="overview-box-body"
+            >
+              <div
+                className="overview-box-title"
+              >
+                 6 días
+              </div>
+              <div
+                className="text-muted"
+              >
+                15-06-2017
+              </div>
+            </div>
+          </div>
+          <div
+            className="overview-box last overview-box-center col-md-4"
+          >
+            <a
+              className="btn btn-primary"
+            >
+              Solicitar Ahora
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div
@@ -59,7 +191,73 @@ exports[`LeaveDashboard should render people information when person is resolved
     <div
       className="panel-body"
     >
-      OVERVIEW
+      <div
+        className="overview"
+      >
+        <h4>
+          21 junio 2017
+        </h4>
+        <span
+          className="text-muted"
+        >
+          15
+           dias disponibles
+        </span>
+        <div
+          className="overview-box-container"
+        >
+          <div
+            className="overview-box col-md-4"
+          >
+            <div
+              className="overview-box-header"
+            >
+              Días Disponibles
+            </div>
+            <div
+              className="overview-box-body"
+            >
+              <div
+                className="overview-box-title"
+              >
+                15
+              </div>
+            </div>
+          </div>
+          <div
+            className="overview-box col-md-4"
+          >
+            <div
+              className="overview-box-header"
+            >
+              Última solicitud
+            </div>
+            <div
+              className="overview-box-body"
+            >
+              <div
+                className="overview-box-title"
+              >
+                 6 días
+              </div>
+              <div
+                className="text-muted"
+              >
+                15-06-2017
+              </div>
+            </div>
+          </div>
+          <div
+            className="overview-box last overview-box-center col-md-4"
+          >
+            <a
+              className="btn btn-primary"
+            >
+              Solicitar Ahora
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div

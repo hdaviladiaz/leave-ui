@@ -10,7 +10,7 @@ export default class Overview extends Component {
   constructor(props) {
     super(props);
     var today = moment()
-    today.lang('es')
+    today.localeData('es')
     this.today = today.format('DD MMMM YYYY');
     if (this.props.lastRequest) {
        this.lastRequest = moment(this.props.lastRequest, "DD-MM-YYYY").fromNow().replace('hace','');
