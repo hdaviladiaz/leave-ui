@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import App from './components/app/app';
-import AdminDashboard from './components/admin-dashboard/admin-dashboard';
-import LeaveDashboard from './components/leave-dashboard/leave-dashboard';
-import Auth from './components/auth/auth';
 import registerServiceWorker from './registerServiceWorker';
 import axios from 'axios';
 
@@ -20,9 +17,6 @@ axios.defaults.baseURL = environment().hostUrl;
 ReactDOM.render(
     <BrowserRouter >
         <App>
-            <Route exact path="/" component={LeaveDashboard} />
-            <Route exact path="/admin" component={AdminDashboard} />
-            <Route exact path="/auth/:token" component={Auth} />
         </App>
     </BrowserRouter>
     , document.getElementById('root'));

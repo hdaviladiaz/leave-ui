@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import Footer from '../footer/footer.js';
 import PersonalInformation from '../personal-information/personal-information.js';
 import Navigation from '../navigation/navigation.js';
