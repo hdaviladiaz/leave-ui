@@ -14,12 +14,12 @@ export default class LeaveRequest extends Component {
        _.isUndefined(this.props.leaves)
        ){
             return (
-          <Panel className="leave-request">
+          <Panel className="leave-request text-center">
             <img alt="" src={'img/back.png'}  className="back-image"/>
           </Panel>
         );
       }
-   
+
     return (
       <Panel className="leave-request">
         LEAVE REQUEST
