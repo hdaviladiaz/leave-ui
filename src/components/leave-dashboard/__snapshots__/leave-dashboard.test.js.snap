@@ -13,7 +13,7 @@ exports[`LeaveDashboard renders a snapshot 1`] = `
     </div>
   </div>
   <div
-    className="panel panel-default"
+    className="leave-request panel panel-default"
     id={undefined}
   >
     <div
@@ -38,7 +38,7 @@ exports[`LeaveDashboard should render error when person is resolved 1`] = `
     </div>
   </div>
   <div
-    className="panel panel-default"
+    className="leave-request panel panel-default"
     id={undefined}
   >
     <div
@@ -63,7 +63,7 @@ exports[`LeaveDashboard should render people information when person is resolved
     </div>
   </div>
   <div
-    className="panel panel-default"
+    className="leave-request panel panel-default"
     id={undefined}
   >
     <div

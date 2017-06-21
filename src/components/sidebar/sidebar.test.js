@@ -1,7 +1,8 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import Sidebar from './sidebar';
+import renderer from 'react-test-renderer';
 
-it('should render Sidebar without crashing', () => {
-  shallow(<Sidebar />);
+xit('should render Sidebar as snapshot', () => {
+  const tree = renderer.create(<Sidebar/>).toJSON();
+  expect(tree).toMatchSnapshot();
 });
