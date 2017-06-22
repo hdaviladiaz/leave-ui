@@ -12,6 +12,7 @@ exports[`should render AdminDashboard as snapshot 1`] = `
       <div
         className="admin-overview"
       >
+<<<<<<< HEAD
         <h4>
           22 junio 2017
         </h4>
@@ -23,6 +24,23 @@ exports[`should render AdminDashboard as snapshot 1`] = `
         </span>
         <div
           className="admin-overview-box-container"
+=======
+        <div
+          className="col-xs-12"
+        >
+          <h4>
+            22 junio 2017
+          </h4>
+          <span
+            className="text-muted"
+          >
+            15
+             dias disponibles
+          </span>
+        </div>
+        <div
+          className="admin-overview-box-container no-padding col-xs-12"
+>>>>>>> 878305ec5e2834617e8a95cfdd7963d8a1dec64f
         >
           <div
             className="admin-overview-box col-md-4"
@@ -38,7 +56,11 @@ exports[`should render AdminDashboard as snapshot 1`] = `
               <div
                 className="admin-overview-box-title"
               >
+<<<<<<< HEAD
                 4
+=======
+                3
+>>>>>>> 878305ec5e2834617e8a95cfdd7963d8a1dec64f
               </div>
             </div>
           </div>
@@ -59,6 +81,7 @@ exports[`should render AdminDashboard as snapshot 1`] = `
       <h4>
         Solicitudes
       </h4>
+<<<<<<< HEAD
       <div
         className="manage-request-table"
       >
@@ -423,6 +446,8 @@ exports[`should render AdminDashboard as snapshot 1`] = `
           </div>
         </div>
       </div>
+=======
+>>>>>>> 878305ec5e2834617e8a95cfdd7963d8a1dec64f
     </div>
   </div>
 </div>

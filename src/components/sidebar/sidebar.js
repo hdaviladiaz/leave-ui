@@ -10,8 +10,6 @@ export default class Sidebar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      person: null,
-      eror: null
     };
     this.peopleService = PeopleService.getInstance();
   }
@@ -29,7 +27,7 @@ export default class Sidebar extends Component {
         <div className="sidebar-content">
           <div className="col-lg-12 p-md">
             <div className="bottom-line col-lg-6 col-lg-push-3 p-b-md text-center">
-              <img alt="" src={'img/logo.png'} className="logo-Image" />
+              <img alt="" src={'/img/logo.png'} className="logo-Image" />
             </div>
             <PersonalInformation person={this.state.person} error={this.state.error} />
             <Navigation isAdmin={this.peopleService.isAdmin()} />
