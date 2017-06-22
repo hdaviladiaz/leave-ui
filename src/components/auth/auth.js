@@ -7,7 +7,8 @@ export default class Auth extends Component {
         localStorage.rol = this.props.match.params.token[this.props.match.params.token.length-1];
     }
     componentDidMount(){
-       this.props.history.push('/')
+        var history = this.props.history;
+        localStorage.rol === 0 ? history.push('/') : history.push('/admin');
     }
     render() {
         return (<div>
