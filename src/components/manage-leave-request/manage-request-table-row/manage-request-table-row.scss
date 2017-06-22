@@ -1,0 +1,27 @@
+
+.manage-request-table-item{
+  border-bottom: 1px solid rgba(204, 204, 204, 0.44);
+  height: 50px;
+}
+.manage-request-table-item:hover{
+  background-color: rgba(93.7%, 93.7%, 92.9%, 0.522);
+  padding-left: 15px;
+}
+.manage-request-table-item-tools-icon{
+    margin-right: 10px;
+    cursor: pointer;
+}
+.manage-request-table-item-tools{
+    float:right;
+    font-size: 25px;
+    margin-top: 10px;
+}
+.manage-request-table-item-time{
+   color:#ccc;
+   font-size: 12px;
+   text-transform: uppercase;
+}
+.manage-request-table-item-body{
+   width: 60%;
+   float: left;
+}

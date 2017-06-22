@@ -9,7 +9,44 @@ exports[`should render AdminDashboard as snapshot 1`] = `
     <div
       className="panel-body"
     >
-      ADMIN OVERVIEW
+      <div
+        className="admin-overview"
+      >
+        <h4>
+          22 junio 2017
+        </h4>
+        <span
+          className="text-muted"
+        >
+          15
+           dias disponibles
+        </span>
+        <div
+          className="admin-overview-box-container"
+        >
+          <div
+            className="admin-overview-box col-md-4"
+          >
+            <div
+              className="admin-overview-box-header"
+            >
+              Pendientes
+            </div>
+            <div
+              className="admin-overview-box-body"
+            >
+              <div
+                className="admin-overview-box-title"
+              >
+                4
+              </div>
+            </div>
+          </div>
+          <div
+            className="admin-overview-box last admin-overview-box-center col-md-8"
+          />
+        </div>
+      </div>
     </div>
   </div>
   <div
@@ -19,7 +56,373 @@ exports[`should render AdminDashboard as snapshot 1`] = `
     <div
       className="panel-body"
     >
-      ADMIN LEAVE REQUEST
+      <h4>
+        Solicitudes
+      </h4>
+      <div
+        className="manage-request-table"
+      >
+        <div
+          className="manage-request-table-title"
+        >
+          Pendientes
+        </div>
+        <div
+          className="manage-request-table-body"
+        >
+          <div
+            className="manage-request-table-item"
+          >
+            <div
+              className="manage-request-table-item-body"
+              onClick={[Function]}
+            >
+              <div
+                className="manage-request-table-item-time"
+              >
+                6:45 PM
+              </div>
+              <div
+                className="manage-request-table-item-name"
+              >
+                Hector Davila
+              </div>
+            </div>
+            <div
+              className="manage-request-table-item-tools"
+            >
+              <span
+                className="manage-request-table-item-tools-icon success-icon"
+                onClick={[Function]}
+                title="Aceptar"
+              >
+                <span
+                  className="animate text-success  glyphicon glyphicon-ok-sign"
+                />
+              </span>
+              <span
+                className="manage-request-table-item-tools-icon"
+                onClick={[Function]}
+                title="Rechazar"
+              >
+                <span
+                  className="animate text-danger  glyphicon glyphicon-remove-sign"
+                />
+              </span>
+            </div>
+          </div>
+          <div
+            className="manage-request-table-item"
+          >
+            <div
+              className="manage-request-table-item-body"
+              onClick={[Function]}
+            >
+              <div
+                className="manage-request-table-item-time"
+              >
+                6:45 PM
+              </div>
+              <div
+                className="manage-request-table-item-name"
+              >
+                Juan Perez
+              </div>
+            </div>
+            <div
+              className="manage-request-table-item-tools"
+            >
+              <span
+                className="manage-request-table-item-tools-icon success-icon"
+                onClick={[Function]}
+                title="Aceptar"
+              >
+                <span
+                  className="animate text-success  glyphicon glyphicon-ok-sign"
+                />
+              </span>
+              <span
+                className="manage-request-table-item-tools-icon"
+                onClick={[Function]}
+                title="Rechazar"
+              >
+                <span
+                  className="animate text-danger  glyphicon glyphicon-remove-sign"
+                />
+              </span>
+            </div>
+          </div>
+          <div
+            className="manage-request-table-item"
+          >
+            <div
+              className="manage-request-table-item-body"
+              onClick={[Function]}
+            >
+              <div
+                className="manage-request-table-item-time"
+              >
+                6:45 PM
+              </div>
+              <div
+                className="manage-request-table-item-name"
+              >
+                Alfonso Davila
+              </div>
+            </div>
+            <div
+              className="manage-request-table-item-tools"
+            >
+              <span
+                className="manage-request-table-item-tools-icon success-icon"
+                onClick={[Function]}
+                title="Aceptar"
+              >
+                <span
+                  className="animate text-success  glyphicon glyphicon-ok-sign"
+                />
+              </span>
+              <span
+                className="manage-request-table-item-tools-icon"
+                onClick={[Function]}
+                title="Rechazar"
+              >
+                <span
+                  className="animate text-danger  glyphicon glyphicon-remove-sign"
+                />
+              </span>
+            </div>
+          </div>
+          <div
+            className="manage-request-table-item"
+          >
+            <div
+              className="manage-request-table-item-body"
+              onClick={[Function]}
+            >
+              <div
+                className="manage-request-table-item-time"
+              >
+                6:45 PM
+              </div>
+              <div
+                className="manage-request-table-item-name"
+              >
+                Victor Cruz
+              </div>
+            </div>
+            <div
+              className="manage-request-table-item-tools"
+            >
+              <span
+                className="manage-request-table-item-tools-icon success-icon"
+                onClick={[Function]}
+                title="Aceptar"
+              >
+                <span
+                  className="animate text-success  glyphicon glyphicon-ok-sign"
+                />
+              </span>
+              <span
+                className="manage-request-table-item-tools-icon"
+                onClick={[Function]}
+                title="Rechazar"
+              >
+                <span
+                  className="animate text-danger  glyphicon glyphicon-remove-sign"
+                />
+              </span>
+            </div>
+          </div>
+          <div
+            className="manage-request-table-no-elements hidden"
+          >
+            NO HAY ELEMENTOS
+          </div>
+        </div>
+      </div>
+      <div
+        className="manage-request-table"
+      >
+        <div
+          className="manage-request-table-title"
+        >
+          Procesadas
+        </div>
+        <div
+          className="manage-request-table-body"
+        >
+          <div
+            className="manage-request-table-item"
+          >
+            <div
+              className="manage-request-table-item-body"
+              onClick={[Function]}
+            >
+              <div
+                className="manage-request-table-item-time"
+              >
+                6:45 PM
+              </div>
+              <div
+                className="manage-request-table-item-name"
+              >
+                Hector Davila
+              </div>
+            </div>
+            <div
+              className="manage-request-table-item-tools"
+            >
+              <span
+                className="manage-request-table-item-tools-icon success-icon"
+                onClick={[Function]}
+                title="Aceptar"
+              >
+                <span
+                  className="status text-none glyphicon glyphicon-ok-sign"
+                />
+              </span>
+              <span
+                className="manage-request-table-item-tools-icon"
+                onClick={[Function]}
+                title="Rechazar"
+              >
+                <span
+                  className="status text-danger glyphicon glyphicon-remove-sign"
+                />
+              </span>
+            </div>
+          </div>
+          <div
+            className="manage-request-table-item"
+          >
+            <div
+              className="manage-request-table-item-body"
+              onClick={[Function]}
+            >
+              <div
+                className="manage-request-table-item-time"
+              >
+                6:45 PM
+              </div>
+              <div
+                className="manage-request-table-item-name"
+              >
+                Juan Perez
+              </div>
+            </div>
+            <div
+              className="manage-request-table-item-tools"
+            >
+              <span
+                className="manage-request-table-item-tools-icon success-icon"
+                onClick={[Function]}
+                title="Aceptar"
+              >
+                <span
+                  className="status text-success glyphicon glyphicon-ok-sign"
+                />
+              </span>
+              <span
+                className="manage-request-table-item-tools-icon"
+                onClick={[Function]}
+                title="Rechazar"
+              >
+                <span
+                  className="status text-none glyphicon glyphicon-remove-sign"
+                />
+              </span>
+            </div>
+          </div>
+          <div
+            className="manage-request-table-item"
+          >
+            <div
+              className="manage-request-table-item-body"
+              onClick={[Function]}
+            >
+              <div
+                className="manage-request-table-item-time"
+              >
+                6:45 PM
+              </div>
+              <div
+                className="manage-request-table-item-name"
+              >
+                Alfonso Davila
+              </div>
+            </div>
+            <div
+              className="manage-request-table-item-tools"
+            >
+              <span
+                className="manage-request-table-item-tools-icon success-icon"
+                onClick={[Function]}
+                title="Aceptar"
+              >
+                <span
+                  className="status text-none glyphicon glyphicon-ok-sign"
+                />
+              </span>
+              <span
+                className="manage-request-table-item-tools-icon"
+                onClick={[Function]}
+                title="Rechazar"
+              >
+                <span
+                  className="status text-danger glyphicon glyphicon-remove-sign"
+                />
+              </span>
+            </div>
+          </div>
+          <div
+            className="manage-request-table-item"
+          >
+            <div
+              className="manage-request-table-item-body"
+              onClick={[Function]}
+            >
+              <div
+                className="manage-request-table-item-time"
+              >
+                6:45 PM
+              </div>
+              <div
+                className="manage-request-table-item-name"
+              >
+                Victor Cruz
+              </div>
+            </div>
+            <div
+              className="manage-request-table-item-tools"
+            >
+              <span
+                className="manage-request-table-item-tools-icon success-icon"
+                onClick={[Function]}
+                title="Aceptar"
+              >
+                <span
+                  className="status text-success glyphicon glyphicon-ok-sign"
+                />
+              </span>
+              <span
+                className="manage-request-table-item-tools-icon"
+                onClick={[Function]}
+                title="Rechazar"
+              >
+                <span
+                  className="status text-none glyphicon glyphicon-remove-sign"
+                />
+              </span>
+            </div>
+          </div>
+          <div
+            className="manage-request-table-no-elements hidden"
+          >
+            NO HAY ELEMENTOS
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
