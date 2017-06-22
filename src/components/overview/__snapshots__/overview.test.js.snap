@@ -11,16 +11,20 @@ exports[`should render Overview as snapshot 1`] = `
     <div
       className="overview"
     >
-      <h4>
-        21 junio 2017
-      </h4>
-      <span
-        className="text-muted"
-      >
-         dias disponibles
-      </span>
       <div
-        className="overview-box-container"
+        className="col-xs-12"
+      >
+        <h4>
+          21 junio 2017
+        </h4>
+        <span
+          className="text-muted"
+        >
+           dias disponibles
+        </span>
+      </div>
+      <div
+        className="overview-box-container no-padding col-xs-12"
       >
         <div
           className="overview-box col-md-4"

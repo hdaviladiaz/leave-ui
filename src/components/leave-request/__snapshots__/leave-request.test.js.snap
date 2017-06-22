@@ -11,7 +11,7 @@ exports[`should render LeaveRequest as snapshot 1`] = `
     <img
       alt=""
       className="back-image"
-      src="img/back.png"
+      src="/img/back.png"
     />
     <h4
       className="gray-color"
