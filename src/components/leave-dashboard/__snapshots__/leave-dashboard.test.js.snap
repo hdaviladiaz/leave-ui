@@ -16,7 +16,7 @@ exports[`LeaveDashboard renders a snapshot 1`] = `
           className="col-xs-12"
         >
           <h4>
-            21 junio 2017
+            22 junio 2017
           </h4>
           <span
             className="text-muted"
@@ -60,7 +60,7 @@ exports[`LeaveDashboard renders a snapshot 1`] = `
               <div
                 className="overview-box-title"
               >
-                 7 días
+                 8 días
               </div>
               <div
                 className="text-muted"
@@ -72,11 +72,12 @@ exports[`LeaveDashboard renders a snapshot 1`] = `
           <div
             className="overview-box last overview-box-center col-md-4"
           >
-            <a
+            <button
               className="btn btn-primary"
+              onClick={[Function]}
             >
-              Solicitar Ahora
-            </a>
+              Solicitar Vacaciones
+            </button>
           </div>
         </div>
       </div>
@@ -120,7 +121,7 @@ exports[`LeaveDashboard should render error when person is resolved 1`] = `
           className="col-xs-12"
         >
           <h4>
-            21 junio 2017
+            22 junio 2017
           </h4>
           <span
             className="text-muted"
@@ -164,7 +165,7 @@ exports[`LeaveDashboard should render error when person is resolved 1`] = `
               <div
                 className="overview-box-title"
               >
-                 7 días
+                 8 días
               </div>
               <div
                 className="text-muted"
@@ -176,11 +177,12 @@ exports[`LeaveDashboard should render error when person is resolved 1`] = `
           <div
             className="overview-box last overview-box-center col-md-4"
           >
-            <a
+            <button
               className="btn btn-primary"
+              onClick={[Function]}
             >
-              Solicitar Ahora
-            </a>
+              Solicitar Vacaciones
+            </button>
           </div>
         </div>
       </div>
@@ -224,7 +226,7 @@ exports[`LeaveDashboard should render people information when person is resolved
           className="col-xs-12"
         >
           <h4>
-            21 junio 2017
+            22 junio 2017
           </h4>
           <span
             className="text-muted"
@@ -268,7 +270,7 @@ exports[`LeaveDashboard should render people information when person is resolved
               <div
                 className="overview-box-title"
               >
-                 7 días
+                 8 días
               </div>
               <div
                 className="text-muted"
@@ -280,11 +282,12 @@ exports[`LeaveDashboard should render people information when person is resolved
           <div
             className="overview-box last overview-box-center col-md-4"
           >
-            <a
+            <button
               className="btn btn-primary"
+              onClick={[Function]}
             >
-              Solicitar Ahora
-            </a>
+              Solicitar Vacaciones
+            </button>
           </div>
         </div>
       </div>

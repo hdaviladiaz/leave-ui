@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Panel, Col } from 'react-bootstrap';
-import { Route, Link } from 'react-router-dom';
 import moment from 'moment';
 import 'moment/locale/es';
 import "./overview.css";
-
+import PropTypes from 'prop-types'
 
 export default class Overview extends Component {
 
@@ -17,6 +16,14 @@ export default class Overview extends Component {
        this.lastRequest = moment(this.props.lastRequest, "DD-MM-YYYY").fromNow().replace('hace','');
     }
   }
+
+  static contextTypes = {
+      router: PropTypes.object
+  }
+
+  navigate(){
+        this.context.router.history.push('/new-leave-request');
+    }
 
   render() {
     return (
@@ -41,12 +48,11 @@ export default class Overview extends Component {
               </div>
             </Col>
             <Col md={4} className="overview-box last overview-box-center">
-              <div className="btn btn-primary"><Link to="/new-leave-request">Solicitar Ahora</Link></div>
+            <button className = "btn btn-primary"  onClick = {this.navigate.bind(this)}>Solicitar Ahora</button>
             </Col>
           </Col>
         </div>
       </Panel>
     );
   }
-
 }
