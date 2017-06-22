@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render NewLeaveRequest as snapshot 1`] = `
+<div>
+  <div
+    className="form-group"
+  >
+    <label
+      className="col-md-4 control-label"
+      for="Thoughtworker "
+    >
+      Thoughtworker
+    </label>
+    <div
+      className="col-md-4"
+    >
+      <input
+        className="form-control input-md"
+        id="Thoughtworker "
+        name="Thoughtworker"
+        placeholder="Thoughtworker"
+        type="text"
+      />
+    </div>
+  </div>
+</div>
+`;

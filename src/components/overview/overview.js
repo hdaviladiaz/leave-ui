@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Panel, Col } from 'react-bootstrap';
+import { Route, Link } from 'react-router-dom';
 import moment from 'moment';
 import 'moment/locale/es';
-import "./overview.css"
+import "./overview.css";
+
 
 export default class Overview extends Component {
 
@@ -39,7 +41,7 @@ export default class Overview extends Component {
               </div>
             </Col>
             <Col md={4} className="overview-box last overview-box-center">
-              <a className="btn btn-primary">Solicitar Ahora</a>
+              <div className="btn btn-primary"><Link to="/new-leave-request">Solicitar Ahora</Link></div>
             </Col>
           </Col>
         </div>
