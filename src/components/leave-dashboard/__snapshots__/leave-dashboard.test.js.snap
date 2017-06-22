@@ -76,7 +76,7 @@ exports[`LeaveDashboard renders a snapshot 1`] = `
               className="btn btn-primary"
               onClick={[Function]}
             >
-              Solicitar Vacaciones
+              Solicitar Ahora
             </button>
           </div>
         </div>
@@ -181,7 +181,7 @@ exports[`LeaveDashboard should render error when person is resolved 1`] = `
               className="btn btn-primary"
               onClick={[Function]}
             >
-              Solicitar Vacaciones
+              Solicitar Ahora
             </button>
           </div>
         </div>
@@ -286,7 +286,7 @@ exports[`LeaveDashboard should render people information when person is resolved
               className="btn btn-primary"
               onClick={[Function]}
             >
-              Solicitar Vacaciones
+              Solicitar Ahora
             </button>
           </div>
         </div>
