@@ -11,18 +11,6 @@ exports[`should render AdminOverview as snapshot 1`] = `
     <div
       className="admin-overview"
     >
-<<<<<<< HEAD
-      <h4>
-        22 junio 2017
-      </h4>
-      <span
-        className="text-muted"
-      >
-         dias disponibles
-      </span>
-      <div
-        className="admin-overview-box-container"
-=======
       <div
         className="col-xs-12"
       >
@@ -37,7 +25,6 @@ exports[`should render AdminOverview as snapshot 1`] = `
       </div>
       <div
         className="admin-overview-box-container no-padding col-xs-12"
->>>>>>> 878305ec5e2834617e8a95cfdd7963d8a1dec64f
       >
         <div
           className="admin-overview-box col-md-4"
