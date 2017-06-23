@@ -2,10 +2,18 @@
 .manage-request-table-item{
   border-bottom: 1px solid rgba(204, 204, 204, 0.44);
   height: 50px;
+  transition: padding 0.3s linear;
 }
 .manage-request-table-item:hover{
   background-color: rgba(93.7%, 93.7%, 92.9%, 0.522);
   padding-left: 15px;
+  transition: padding 0.3s linear;
+}
+.manage-request-table-item:hover .manage-request-table-item-name{
+  font-weight: bold;
+}
+.manage-request-table-item:hover .manage-request-table-item-time{
+  color:#707070;
 }
 .manage-request-table-item-tools-icon{
     margin-right: 10px;
