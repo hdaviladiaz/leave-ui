@@ -16,7 +16,7 @@ exports[`should render AdminDashboard as snapshot 1`] = `
           className="col-xs-12"
         >
           <h4>
-            22 junio 2017
+            23 junio 2017
           </h4>
           <span
             className="text-muted"

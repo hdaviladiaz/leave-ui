@@ -60,7 +60,6 @@ export default class LeaveCalendar extends Component {
     return (
       <div>
         <DatePicker placeholderText="Click to select a date"
-          ref='calendar'
           selected={this.state.date}
           fixedHeight={true}
           readOnly={true}
