@@ -19,7 +19,7 @@ beforeEach(() => {
   window.localStorage = storageMock();
 });
 
-//BUG: Bug found in react-test-renderer https://github.com/facebook/react/issues/8324 
+//BUG: Bug found in react-test-renderer https://github.com/facebook/react/issues/8324
 xit('should render NewLeaveRequest as snapshot', () => {
   const tree = renderer.create(<LeaveCalendar/>).toJSON();
   expect(tree).toMatchSnapshot();
