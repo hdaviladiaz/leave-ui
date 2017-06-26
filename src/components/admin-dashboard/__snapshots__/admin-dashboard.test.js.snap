@@ -16,11 +16,15 @@ exports[`should render AdminDashboard as snapshot 1`] = `
           className="col-xs-12"
         >
           <h4>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
             26 junio 2017
 =======
             23 junio 2017
 >>>>>>> 3cf583a66981cc9e5894cf6d005bba096a45f1db
+=======
+            23 junio 2017
+>>>>>>> Stashed changes
           </h4>
           <span
             className="text-muted"
