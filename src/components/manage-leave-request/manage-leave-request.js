@@ -3,9 +3,7 @@ import { Panel } from 'react-bootstrap';
 import './manage-leave-request.css';
 import ManageRequestTable from './manage-request-table/manage-request-table'
 
-
 export default class ManageLeaveRequest extends Component {
-
 
   render() {
     return (
@@ -23,7 +21,7 @@ export default class ManageLeaveRequest extends Component {
           title='Procesadas'
           onclick={this.props.onclick}
           data={this.props.processedRequests}
-          block="true" />
+          block={true} />
       </Panel>
     );
   }

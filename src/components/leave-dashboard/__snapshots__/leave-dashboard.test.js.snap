@@ -16,7 +16,7 @@ exports[`LeaveDashboard renders a snapshot 1`] = `
           className="col-xs-12"
         >
           <h4>
-            22 junio 2017
+            26 junio 2017
           </h4>
           <span
             className="text-muted"
@@ -60,7 +60,7 @@ exports[`LeaveDashboard renders a snapshot 1`] = `
               <div
                 className="overview-box-title"
               >
-                 8 días
+                 11 días
               </div>
               <div
                 className="text-muted"
@@ -121,7 +121,7 @@ exports[`LeaveDashboard should render error when person is resolved 1`] = `
           className="col-xs-12"
         >
           <h4>
-            22 junio 2017
+            26 junio 2017
           </h4>
           <span
             className="text-muted"
@@ -165,7 +165,7 @@ exports[`LeaveDashboard should render error when person is resolved 1`] = `
               <div
                 className="overview-box-title"
               >
-                 8 días
+                 11 días
               </div>
               <div
                 className="text-muted"
@@ -226,7 +226,7 @@ exports[`LeaveDashboard should render people information when person is resolved
           className="col-xs-12"
         >
           <h4>
-            22 junio 2017
+            26 junio 2017
           </h4>
           <span
             className="text-muted"
@@ -270,7 +270,7 @@ exports[`LeaveDashboard should render people information when person is resolved
               <div
                 className="overview-box-title"
               >
-                 8 días
+                 11 días
               </div>
               <div
                 className="text-muted"

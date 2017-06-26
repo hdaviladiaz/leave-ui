@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { Glyphicon } from 'react-bootstrap';
 import './manage-request-table-row.css';
+import moment from 'moment';
+
 
 const deleteStatus = 2;
 const seccessStatus = 1;
 export default class ManageRequestTableRow extends Component {
 
-  constructor(props) {
-    super(props);
+  initialize() {
     this.successClass = this.deleteClass = "status ";
     this.onsuccess = this.onfailure = () => { };
     this.onclick = this.props.onclick || (() => { });
@@ -25,11 +26,13 @@ export default class ManageRequestTableRow extends Component {
   }
 
   render() {
+   this.initialize();
+
     return (
       <div className="manage-request-table-item">
         <div onClick={this.onclick.bind(this, this.props.request)} className="manage-request-table-item-body">
-          <div className="manage-request-table-item-time">{this.props.request.time}</div>
-          <div className="manage-request-table-item-name">{this.props.request.name}</div>
+          <div className="manage-request-table-item-time">{this.props.request.start_date}</div>
+          <div className="manage-request-table-item-name">{this.props.request.employee_id}</div>
         </div>
         <div className="manage-request-table-item-tools" >
           <span title="Aceptar" onClick={this.onsuccess.bind(this, this.props.request)} className="manage-request-table-item-tools-icon success-icon">
