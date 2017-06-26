@@ -1,17 +1,11 @@
 import React, {Component} from 'react';
-import Overview from '../overview/overview.js';
 import { Panel } from 'react-bootstrap';
 
-export default class ClassName extends Component {
-  constructor(props) {
-    super(props)
-  }
-
+export default class NewLeaveRequest extends Component {
+  
   render() {
     return (
       <div>
-        <Overview days={15} lastRequest={'15-06-2017'}/>
-
           <Panel className="leave-request">
             <div>
                 <div className="form-group">

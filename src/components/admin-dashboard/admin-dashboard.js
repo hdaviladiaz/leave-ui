@@ -1,7 +1,23 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom'
 import './admin-dashboard.css';
 import AdminOverview from '../admin-overview/admin-overview.js'
 import ManageLeaveRequest from '../manage-leave-request/manage-leave-request.js'
+
+const renderMergedProps = (component, ...rest) => {
+  const finalProps = Object.assign({}, ...rest);
+  return (
+    React.createElement(component, finalProps)
+  );
+}
+
+const PropsRoute = ({ component, ...rest }) => {
+  return (
+    <Route {...rest} render={routeProps => {
+      return renderMergedProps(component, routeProps, rest);
+    }} />
+  );
+}
 
 export default class AdminDashboard extends Component {
 
@@ -27,19 +43,24 @@ export default class AdminDashboard extends Component {
     }
   }
 
+
+
   render() {
     return (
       <div>
         <AdminOverview
           days={15}
           pendingRequests={this.pendingRequests.length} />
-
-        <ManageLeaveRequest
+        <PropsRoute
+          path='/admin/dashboard/leaves'
+          exact={true}
+          component={ManageLeaveRequest}
           onsuccess={this.onsuccess}
           onfailure={this.onfailure}
           onclick={this.onclick}
           pendingRequests={this.pendingRequests}
           processedRequests={this.pendingRequests} />
+
       </div>
     );
   }

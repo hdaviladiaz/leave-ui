@@ -15,7 +15,7 @@ exports[`should render AdminOverview as snapshot 1`] = `
         className="col-xs-12"
       >
         <h4>
-          22 junio 2017
+          24 junio 2017
         </h4>
         <span
           className="text-muted"

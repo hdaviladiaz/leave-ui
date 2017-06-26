@@ -22,7 +22,7 @@ export default class Overview extends Component {
   }
 
   navigate(){
-        this.context.router.history.push('/new-leave-request');
+        this.context.router.history.push('/dashboard/leaves/new');
     }
 
   render() {

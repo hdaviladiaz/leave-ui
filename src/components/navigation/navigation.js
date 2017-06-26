@@ -19,8 +19,8 @@ class Navigation extends Component {
   render() {
     return (
       <div className="col-lg-12">
-        <div><Link className={`btn btn-default navigation-button ${this.checkActive("/")}`} to="/">Mis Vacaciones</Link></div>
-        <div className={this.isAdminClass} ><Link className={`btn btn-default navigation-button ${this.checkActive("/admin")}`} to="/admin">Solicitudes</Link></div>
+        <div><Link className={`btn btn-default navigation-button ${this.checkActive("/dashboard/leaves")}`} to="/dashboard/leaves">Mis Vacaciones</Link></div>
+        <div className={this.isAdminClass} ><Link className={`btn btn-default navigation-button ${this.checkActive("/admin/dashboard/leaves")}`} to="/admin/dashboard/leaves">Solicitudes</Link></div>
         <div><a className={`btn btn-default navigation-button`} >Cerrar Sesion</a></div>
       </div>
     );
