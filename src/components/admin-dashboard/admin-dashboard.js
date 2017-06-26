@@ -41,8 +41,6 @@ export default class AdminDashboard extends Component {
       console.log("click", request);
     }
   }
-
-
   componentDidMount() {
     this.leaveRequestService
       .getRequestAdminList()
@@ -52,6 +50,7 @@ export default class AdminDashboard extends Component {
         this.setState({ numberOfPendingdRequests: requests.length });
       })
       .catch(error => {
+        this.setState({ requests: [] });
         this.setState({ error: error });
         this.setState({ numberOfPendingdRequests: 0 });
       });
@@ -63,8 +62,8 @@ export default class AdminDashboard extends Component {
       <div>
         <AdminOverview
           days={15}
-          pendingRequests={this.pendingRequests.length} />
-          
+          pendingRequests={this.state.numberOfPendingdRequests} />
+
         <PropsRoute
           path='/admin/dashboard/leaves'
           exact={true}
@@ -72,9 +71,8 @@ export default class AdminDashboard extends Component {
           onsuccess={this.onsuccess}
           onfailure={this.onfailure}
           onclick={this.onclick}
-          pendingRequests={this.pendingRequests}
-          processedRequests={this.pendingRequests}
-          pendingRequests={this.state.numberOfPendingdRequests} />
+          pendingRequests={this.state.requests}
+          processedRequests={this.state.requests}/>
       </div>
     );
   }
