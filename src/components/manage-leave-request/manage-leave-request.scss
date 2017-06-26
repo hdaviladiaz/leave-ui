@@ -1,4 +1,5 @@
 
 .manage-leave-request{
-    min-height: calc(100vh - 288px);
+    height: calc(100vh - 288px);
+    overflow-y: auto;
 }

@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
 import './manage-request-table.css';
 import ManageRequestTableRow from '../manage-request-table-row/manage-request-table-row'
-
 export default class ManageRequestTable extends Component {
 
-  constructor(props) {
-    super(props);
-    this.data = props.data || [];
+
+  initialize(){
+    this.data = this.props.data || [];
     this.noElementsClass = "hidden";
     if (this.data.length === 0) {
       this.noElementsClass = "";
     }
   }
 
+
   render() {
+    this.initialize();
     return (
       <div className="manage-request-table">
         <div className="manage-request-table-title">{this.props.title}</div>
