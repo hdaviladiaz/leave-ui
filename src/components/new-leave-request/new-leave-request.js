@@ -71,7 +71,7 @@ export default class NewLeaveRequest extends Component {
              <Col md={5}>
                <div className="new-leave-request-date-right-container">
                  <span>Inicio</span>
-                 <LeaveCalendar onSelectDate={this.handleDateFrom.bind(this)}/>
+                 <LeaveCalendar onSelectDate={this.handleDateFrom.bind(this)} startDate={moment()}/>
                </div>
              </Col>
 
@@ -84,7 +84,7 @@ export default class NewLeaveRequest extends Component {
              <Col md={5}>
                <div className="new-leave-request-date-left-container">
                  <span>Fin</span>
-                 <LeaveCalendar selected={this.state.dateTo} onSelectDate={this.handleDateTo.bind(this)}/>
+                 <LeaveCalendar onSelectDate={this.handleDateTo.bind(this)} startDate={moment().add(1,'days')}/>
                </div>
              </Col>
             </div>
