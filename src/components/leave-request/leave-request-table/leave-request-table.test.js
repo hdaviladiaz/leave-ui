@@ -1,9 +1,9 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import ManageRequestTable from './manage-request-table';
-import ManageRequestTableRow from '../manage-request-table-row/manage-request-table-row';
+import LeaveRequestTable from './leave-request-table';
+import LeaveRequestTableRow from '../leave-request-table-row/leave-request-table-row';
 
-describe('manage-request-table', () => {
+describe('leave-request-table', () => {
     let requests = [];
     let random = 0;
     beforeEach(() => {
@@ -14,14 +14,14 @@ describe('manage-request-table', () => {
         }
     });
     it('should render right number of rows', () => {
-        let wrapper = mount(<ManageRequestTable data={requests} />);
-        let rows = wrapper.find('ManageRequestTableRow');
+        let wrapper = mount(<LeaveRequestTable data={requests} />);
+        let rows = wrapper.find('LeaveRequestTableRow');
         expect(rows.length).toEqual(random);
     });
 
     it('should not render rows when no data', () => {
-        let wrapper = mount(<ManageRequestTable/>);
-        let rows = wrapper.find('ManageRequestTableRow');
+        let wrapper = mount(<LeaveRequestTable/>);
+        let rows = wrapper.find('LeaveRequestTableRow');
         expect(rows.length).toEqual(0);
     });
 });

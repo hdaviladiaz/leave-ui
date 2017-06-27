@@ -43,7 +43,7 @@ describe('LeaveRequestService', () => {
       return config.url;
     });
     let resolvedUrl = leaveRequestService.getRequests();
-
+    
     return expect(resolvedUrl).toEqual(expectedUrl);
   });
 });
