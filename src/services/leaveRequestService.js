@@ -11,4 +11,8 @@ export default class LeaveRequestService extends RequestService {
   getRequests() {
     return this.request({ url: 'leave_requests/me/approve' });
   }
+
+  createLeaveRequest(data) {
+    return this.request({ method: "POST" ,url: '/leave_requests', data:data});
+  }
 }

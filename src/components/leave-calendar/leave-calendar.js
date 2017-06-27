@@ -13,7 +13,8 @@ export default class LeaveCalendar extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      date: moment(),
+      date: this.props.startDate,
+      startDate: this.props.startDate,
     };
     this.handleDateChange = this.handleDateChange.bind(this);
     this.isWeekday = this.isWeekday.bind(this);
@@ -65,7 +66,7 @@ export default class LeaveCalendar extends Component {
           readOnly={true}
           filterDate={this.isWeekday}
           customInput={< input className = 'col-md-3' type = "text" />}
-          minDate={moment()}
+          minDate={this.state.startDate}
           maxDate={this.isHolidaysNextYear(this.state.dates)}
           excludeDates={this.state.dates}
           calendarClassName="rasta-stripes"
