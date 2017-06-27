@@ -8,7 +8,7 @@ export default class Auth extends Component {
     }
     componentDidMount(){
         var history = this.props.history;
-        localStorage.rol === 0 ? history.push('/') : history.push('/admin');
+        localStorage.rol === 0 ? history.push('/admin/dashboard/leaves') : history.push('/admin/dashboard/leaves');
     }
     render() {
         return (<div>

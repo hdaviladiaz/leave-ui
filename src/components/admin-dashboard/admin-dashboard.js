@@ -5,6 +5,8 @@ import AdminOverview from '../admin-overview/admin-overview.js'
 import ManageLeaveRequest from '../manage-leave-request/manage-leave-request.js'
 import LeaveRequestService from '../../services/leaveRequestService';
 
+const pendingStatus = 'pending';
+
 const renderMergedProps = (component, ...rest) => {
   const finalProps = Object.assign({}, ...rest);
   return (
@@ -43,14 +45,16 @@ export default class AdminDashboard extends Component {
   }
   componentDidMount() {
     this.leaveRequestService
-      .getRequestAdminList()
+      .getRequests()
       .then(requests => {
-        // TODO: extract pendings request to another state, when request status is set
-        this.setState({ requests: requests });
-        this.setState({ numberOfPendingdRequests: requests.length });
+        let pendingRequests = requests.filter((r) => r.status == pendingStatus);
+        this.setState({ requests: requests.filter((r) => r.status != pendingStatus) });
+        this.setState({ pendingRequests: pendingRequests });
+        this.setState({ numberOfPendingdRequests: pendingRequests.length });
       })
       .catch(error => {
         this.setState({ requests: [] });
+        this.setState({ pendingRequests: [] });
         this.setState({ error: error });
         this.setState({ numberOfPendingdRequests: 0 });
       });
@@ -71,8 +75,8 @@ export default class AdminDashboard extends Component {
           onsuccess={this.onsuccess}
           onfailure={this.onfailure}
           onclick={this.onclick}
-          pendingRequests={this.state.requests}
-          processedRequests={this.state.requests}/>
+          pendingRequests={this.state.pendingRequests}
+          processedRequests={this.state.requests} />
       </div>
     );
   }

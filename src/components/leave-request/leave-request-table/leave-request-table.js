@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import './manage-request-table.css';
-import LeaveRequestTableRow from '../manage-request-table-row/manage-request-table-row'
-export default class ManageRequestTable extends Component {
+import './leave-request-table.css';
+import ManageRequestTableRow from '../leave-request-table-row/leave-request-table-row'
+export default class LeaveRequestTable extends Component {
 
 
   initialize(){
@@ -16,18 +16,18 @@ export default class ManageRequestTable extends Component {
   render() {
     this.initialize();
     return (
-      <div className="manage-request-table">
-        <div className="manage-request-table-title">{this.props.title}</div>
-        <div className="manage-request-table-body">
+      <div className="leave-request-table">
+        <div className="leave-request-table-title">{this.props.title}</div>
+        <div className="leave-request-table-body">
           {this.data.map((request, index) => (
-            <LeaveRequestTableRow key={index}
+            <ManageRequestTableRow key={index}
               request={request}
               onsuccess={this.props.onsuccess}
               onfailure={this.props.onfailure}
               onclick={this.props.onclick}
               block={this.props.block} />
           ))}
-          <div className={`manage-request-table-no-elements ${this.noElementsClass}`}>NO HAY ELEMENTOS</div>
+          <div className={`leave-request-table-no-elements ${this.noElementsClass}`}>NO HAY ELEMENTOS</div>
         </div>
       </div>
     );
