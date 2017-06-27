@@ -38,7 +38,6 @@ export default class NewLeaveRequest extends Component {
     this.toggleInformed = this.toggleInformed.bind(this);
     this.leaveRequestService = LeaveRequestService.getInstance();
     this.showAlert = this.showAlert.bind(this);
-    console.log(this.state.dateTo);
   }
 
   handleDateFrom(dateFrom) {
