@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-import React, {Component} from 'react';
-import {Panel} from 'react-bootstrap';
-import './overview.css';
-
-
-export default class Overview extends Component {
-
-  constructor() {
-    super();
-    this.state = {
-      currentDate: this.getHumanizedHour()
-    }
-  }
-
-  getHumanizedHour() {
-    let currentDate = new Date();
-    let options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return currentDate.toLocaleDateString("es-ES", options);
-  }
-
-=======
 import React, { Component } from 'react';
 import { Panel, Col } from 'react-bootstrap';
 import moment from 'moment';
@@ -47,22 +25,11 @@ export default class Overview extends Component {
         this.context.router.history.push('/dashboard/leaves/new');
     }
 
->>>>>>> 05d2731f8e09d86e21f968f4f834d9927fdf099b
   render() {
     return (
       
       <Panel>
-<<<<<<< HEAD
-        <div className="oheader">
-          <p>{this.state.currentDate}</p>
-          <p className="otext">15 dias disponibles</p>
-        </div>
 
-        <div className="row row-list">
-            <div className="col-xs-3">DIAS DISPONIBLES</div>
-            <div className="col-xs-3">ÚLTIMA SOLICITUD</div>
-            <div className="col-xs-6"><p>lorem ipsum</p></div>
-=======
         <div className="overview">
           <Col xs={12}>
             <h4>{this.today}</h4>
@@ -86,7 +53,6 @@ export default class Overview extends Component {
             <button className = "btn btn-primary"  onClick = {this.navigate.bind(this)}>Solicitar Ahora</button>
             </Col>
           </Col>
->>>>>>> 05d2731f8e09d86e21f968f4f834d9927fdf099b
         </div>
       </Panel>
       
