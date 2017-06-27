@@ -42,12 +42,7 @@ describe('LeaveRequestService', () => {
     leaveRequestService.request = jest.fn((config) => {
       return config.url;
     });
-<<<<<<< HEAD
     let resolvedUrl = leaveRequestService.getRequests();
-=======
-    let resolvedUrl = leaveRequestService.getRequestAdminList();
-
->>>>>>> a9a70f8c412f4ae885a2fa3218128b8a9ec87750
     return expect(resolvedUrl).toEqual(expectedUrl);
   });
 });

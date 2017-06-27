@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import './leave-request-table.css';
-import LeaveRequestTableRow from '../leave-request-table-row/leave-request-table-row'
+import './manage-request-table.css';
+import LeaveRequestTableRow from '../manage-request-table-row/manage-request-table-row'
 export default class ManageRequestTable extends Component {
 
 
