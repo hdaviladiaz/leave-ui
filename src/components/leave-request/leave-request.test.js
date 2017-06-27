@@ -1,13 +1,8 @@
-'use strict';
 import React from 'react';
-import { shallow } from 'enzyme';
 import LeaveRequest from './leave-request.js';
+import renderer from 'react-test-renderer';
 
-describe('LeaveRequest', () => {
-
-  it('should render LeaveRequest component', () => {
-    const wrapper = shallow(<LeaveRequest />);
-    const instanceLeaveRequest = wrapper.instance();
-    expect(instanceLeaveRequest).toBeInstanceOf(LeaveRequest);
-  });
+it('should render LeaveRequest as snapshot', () => {
+  const tree = renderer.create(<LeaveRequest/>).toJSON();
+  expect(tree).toMatchSnapshot();
 });

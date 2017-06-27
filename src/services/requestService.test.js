@@ -25,35 +25,57 @@ describe('requestService', () => {
   });
 
 
-  it('should set correct token header', () => {
-    localStorage.token = 1234567890;
-    mock.onAny(path).reply(config => {
-      return [200, config.headers.Token];
+  describe('request method', () => {
+    it('should set correct token header', () => {
+      localStorage.token = '1234567890de';
+      mock.onAny(path).reply(config => {
+        return [200, config.headers.Token];
+      });
+      let requestPromise = requestService.request({ url: path, method: 'GET' });
+      return expect(requestPromise).resolves.toEqual(localStorage.token);
     });
-    let requestPromise = requestService.request({ url: path, method: 'GET' });
-    return expect(requestPromise).resolves.toEqual(localStorage.token);
+
+    it('should redirect when response status is 303', () => {
+      expect.assertions(1);
+      mock.onAny(path).reply(config => {
+        return [303, '/test/test2'];
+      });
+      var customWindow = { location: "" };
+      requestService.redirect = jest.fn(function (url) {
+        customWindow.location = url;
+      })
+      let requestPromise = requestService.request({ url: path, method: 'GET' });
+      return requestPromise.then(error => expect(customWindow.location).toEqual(environment().hostUrl + '/test/test2'));
+    });
+
+    it('should get data when response status is 200', () => {
+      let expectedData = { data: [Math.random()] };
+      mock.onGet(path).reply(config => {
+        return [200, expectedData];
+      });
+      let requestPromise = requestService.request({ url: path, method: 'GET' });
+      return requestPromise.then(result => expect(result).toEqual(expectedData));
+    });
   });
 
-  it('should redirect when response status is 303', () => {
-    expect.assertions(1);
-    mock.onAny(path).reply(config => {
-      return [303, '/test/test2'];
+  describe('isAdmin method', () => {
+    it('should return true when token ends with 1', () => {
+      localStorage.token = '12345678901';
+      let resolvedResult = requestService.isAdmin();
+      return expect(resolvedResult).toEqual(true);
     });
-    var customWindow = { location: "" };
-    requestService.redirect = jest.fn(function (url) {
-      customWindow.location = url;
-    })
-    let requestPromise = requestService.request({ url: path, method: 'GET' });
-    return requestPromise.then(error => expect(customWindow.location).toEqual(environment().hostUrl + '/test/test2'));
-  });
 
-  it('should get data when response status is 200', () => {
-    let expectedData = { data: [Math.random()] };
-    mock.onGet(path).reply(config => {
-      return [200, expectedData];
+    it('should return false when token ends with 0', () => {
+      localStorage.token = '12345678900';
+      let resolvedResult = requestService.isAdmin();
+      return expect(resolvedResult).toEqual(false);
     });
-    let requestPromise = requestService.request({ url: path, method: 'GET' });
-    return requestPromise.then(result => expect(result).toEqual(expectedData));
-  });
+
+    it('should return false when token does not exist', () => {
+      let resolvedResult = requestService.isAdmin();
+      return expect(resolvedResult).toEqual(false);
+    });
+  })
+
 
 });

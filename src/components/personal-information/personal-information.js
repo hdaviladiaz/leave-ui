@@ -6,16 +6,16 @@ const PersonalInformation = ({person, error}) =>{
 
   if(error){
     return(
-      <Alert bsStyle="danger">
-        Hubo un error al consultar su información
-      </Alert>);
+      <div className="personal-container col-lg-12">
+        <Alert bsStyle="danger">
+          Hubo un error al consultar su información
+        </Alert>
+      </div>);
   }
 
   if(!person){
    return(
-	   <Alert bsStyle="info">
-      Recuperando información
-	   </Alert>);
+	   <div className="personal-container col-lg-12"/>);
   }
 
   return(

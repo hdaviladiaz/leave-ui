@@ -1,7 +1,4 @@
-html, body {
-  height: 100%;
-  font-family: sans-serif;
-}
+
 
 #root {
   display: block;
@@ -46,4 +43,17 @@ html, body {
 [class*='col-'].no-padding {
     padding-right:0;
     padding-left:0;
+}
+
+.gray-color {
+  color: #ccc;
+}
+.text-none{
+    color: rgba(95, 95, 95, 0.12);
+}
+.animate:hover{
+   transform: scale(1.3);
+}
+.status{
+    cursor: initial !important;
 }

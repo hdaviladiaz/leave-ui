@@ -1,3 +1,4 @@
+import Dashboard from '../dashboard/dashboard'
 import React, { Component } from 'react';
 import Sidebar from '../sidebar/sidebar'
 import {Col} from 'react-bootstrap';
@@ -11,7 +12,7 @@ export default class App extends Component {
           <Sidebar />
         </Col>
         <Col xs={9} className="bg-color">
-          {this.props.children}
+          <Dashboard/>
         </Col>
       </div>
     );

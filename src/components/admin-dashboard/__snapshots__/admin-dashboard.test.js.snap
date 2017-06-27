@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render AdminDashboard as snapshot 1`] = `
+<div>
+  <div
+    className="panel panel-default"
+    id={undefined}
+  >
+    <div
+      className="panel-body"
+    >
+      <div
+        className="admin-overview"
+      >
+        <div
+          className="col-xs-12"
+        >
+          <h4>
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+            26 junio 2017
+=======
+            23 junio 2017
+>>>>>>> 3cf583a66981cc9e5894cf6d005bba096a45f1db
+=======
+            23 junio 2017
+>>>>>>> Stashed changes
+          </h4>
+          <span
+            className="text-muted"
+          >
+            15
+             dias disponibles
+          </span>
+        </div>
+        <div
+          className="admin-overview-box-container no-padding col-xs-12"
+        >
+          <div
+            className="admin-overview-box col-md-4"
+          >
+            <div
+              className="admin-overview-box-header"
+            >
+              Pendientes
+            </div>
+            <div
+              className="admin-overview-box-body"
+            >
+              <div
+                className="admin-overview-box-title"
+              />
+            </div>
+          </div>
+          <div
+            className="admin-overview-box last admin-overview-box-center col-md-8"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="manage-leave-request panel panel-default"
+    id={undefined}
+  >
+    <div
+      className="panel-body"
+    >
+      <h4>
+        Solicitudes
+      </h4>
+      <div
+        className="manage-request-table"
+      >
+        <div
+          className="manage-request-table-title"
+        >
+          Pendientes
+        </div>
+        <div
+          className="manage-request-table-body"
+        >
+          <div
+            className="manage-request-table-no-elements "
+          >
+            NO HAY ELEMENTOS
+          </div>
+        </div>
+      </div>
+      <div
+        className="manage-request-table"
+      >
+        <div
+          className="manage-request-table-title"
+        >
+          Procesadas
+        </div>
+        <div
+          className="manage-request-table-body"
+        >
+          <div
+            className="manage-request-table-no-elements "
+          >
+            NO HAY ELEMENTOS
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -8,21 +8,29 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <Alert
-    bsClass="alert"
-    bsStyle="danger"
-    closeLabel="Close alert"
+  "node": <div
+    className="personal-container col-lg-12"
 >
-    Hubo un error al consultar su información
-</Alert>,
-  "nodes": Array [
     <Alert
-      bsClass="alert"
-      bsStyle="danger"
-      closeLabel="Close alert"
+        bsClass="alert"
+        bsStyle="danger"
+        closeLabel="Close alert"
+    >
+        Hubo un error al consultar su información
+    </Alert>
+</div>,
+  "nodes": Array [
+    <div
+      className="personal-container col-lg-12"
 >
-      Hubo un error al consultar su información
-</Alert>,
+      <Alert
+            bsClass="alert"
+            bsStyle="danger"
+            closeLabel="Close alert"
+      >
+            Hubo un error al consultar su información
+      </Alert>
+</div>,
   ],
   "options": Object {},
   "renderer": ReactShallowRenderer {
@@ -64,23 +72,31 @@ ShallowWrapper {
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <Alert
-          bsClass="alert"
-          bsStyle="danger"
-          closeLabel="Close alert"
+        "_currentElement": <div
+          className="personal-container col-lg-12"
 >
-          Hubo un error al consultar su información
-</Alert>,
+          <Alert
+                    bsClass="alert"
+                    bsStyle="danger"
+                    closeLabel="Close alert"
+          >
+                    Hubo un error al consultar su información
+          </Alert>
+</div>,
         "_debugID": 4,
-        "_renderedOutput": <Alert
-          bsClass="alert"
-          bsStyle="danger"
-          closeLabel="Close alert"
+        "_renderedOutput": <div
+          className="personal-container col-lg-12"
 >
-          Hubo un error al consultar su información
-</Alert>,
+          <Alert
+                    bsClass="alert"
+                    bsStyle="danger"
+                    closeLabel="Close alert"
+          >
+                    Hubo un error al consultar su información
+          </Alert>
+</div>,
       },
-      "_renderedNodeType": 1,
+      "_renderedNodeType": 0,
       "_rootNodeID": 0,
       "_topLevelWrapper": null,
       "_updateBatchNumber": null,
@@ -124,6 +140,7 @@ ShallowWrapper {
             Viviana Perez
         </p>
         <p>
+            TWer from 
             2013-08-05
         </p>
     </div>
@@ -148,6 +165,7 @@ ShallowWrapper {
                   Viviana Perez
             </p>
             <p>
+                  TWer from 
                   2013-08-05
             </p>
       </div>
@@ -240,6 +258,7 @@ ShallowWrapper {
                               Viviana Perez
                     </p>
                     <p>
+                              TWer from 
                               2013-08-05
                     </p>
           </div>
@@ -264,6 +283,7 @@ ShallowWrapper {
                               Viviana Perez
                     </p>
                     <p>
+                              TWer from 
                               2013-08-05
                     </p>
           </div>

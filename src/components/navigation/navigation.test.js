@@ -1,7 +1,7 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import Navigation from './navigation';
+import renderer from 'react-test-renderer';
 
-xit('should render Navigation without crashing', () => {
-  shallow(<Navigation />);
+it('should render Navigation as snapshot', () => {
+  
 });

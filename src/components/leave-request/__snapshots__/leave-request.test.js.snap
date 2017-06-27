@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render LeaveRequest as snapshot 1`] = `
+<div
+  className="leave-request text-center panel panel-default"
+  id={undefined}
+>
+  <div
+    className="panel-body"
+  >
+    <img
+      alt=""
+      className="back-image"
+      src="/img/back.png"
+    />
+    <h4
+      className="gray-color"
+    >
+      No has solicitado vacaciones
+    </h4>
+  </div>
+</div>
+`;

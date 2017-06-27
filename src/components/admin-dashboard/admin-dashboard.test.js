@@ -1,7 +1,17 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import AdminDashboard from './admin-dashboard';
+import renderer from 'react-test-renderer';
+import LeaveRequestService from '../../services/leaveRequestService';
 
-it('should render AdminDashboard without crashing', () => {
-  shallow(<AdminDashboard />);
+xit('should render AdminDashboard as snapshot', () => {
+  LeaveRequestService.getInstance=jest.fn(() => {
+    return {
+      getRequestAdminList:() => {
+        return new Promise((resolve,reject) => {
+          return {};
+        })
+    }}
+  });
+  const tree = renderer.create(<AdminDashboard/>).toJSON();
+  expect(tree).toMatchSnapshot();
 });
