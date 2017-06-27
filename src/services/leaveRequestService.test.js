@@ -12,12 +12,12 @@ describe('LeaveRequestService', () => {
     jest.resetAllMocks();
   });
 
-  it('should call correct endpoint when getRequestAdminList is called', () => {
-    let expectedUrl = "leave_requests";
+  it('should call correct endpoint when getRequests is called', () => {
+    let expectedUrl = "leave_requests/me/approve";
     leaveRequestService.request = jest.fn((config) => {
       return config.url;
     });
-    let resolvedUrl = leaveRequestService.getRequestAdminList();
+    let resolvedUrl = leaveRequestService.getRequests();
     return expect(resolvedUrl).toEqual(expectedUrl);
   });
 
