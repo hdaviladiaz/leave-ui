@@ -62,7 +62,7 @@ export default class NewLeaveRequest extends Component {
     } 
 
       this.leaveRequestService
-        .createLeaveRequest({ employee_id: 99, start_date: this.state.dateFrom, end_date: this.state.dateTo, return_date: this.state.dateTo })
+        .createLeaveRequest({ start_date: this.state.dateFrom, end_date: this.state.dateTo, return_date: this.state.dateTo })
         .then(
         function (response) {
             window.location = "/";
