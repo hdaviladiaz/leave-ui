@@ -47,12 +47,30 @@ export default class AdminDashboard extends Component {
 
 
     this.onsuccess = (request) => {
-      alert("Request Approved");
-      console.log("success", request);
+      let custom = this;
+      this.leaveRequestService
+        .updateApproveStatus(request, "approved")
+        .then(
+        function (response) {
+          custom.getLeavesStatus();
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
     }
     this.onfailure = (request) => {
-      alert("Request NOT Approved");
-      console.log("failure", request);
+      let custom = this;
+
+      this.leaveRequestService
+        .updateApproveStatus(request, "rejected")
+        .then(
+        function (response) {
+          custom.getLeavesStatus();
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     }
     this.onclick = (request) => {
       this.setState({ modalIsOpen: true });
@@ -65,6 +83,10 @@ export default class AdminDashboard extends Component {
     this.closeModal = this.closeModal.bind(this);
   }
   componentDidMount() {
+    this.getLeavesStatus();
+  }
+
+  getLeavesStatus() {
     this.leaveRequestService
       .getRequestsToApprove()
       .then(requests => {
@@ -142,16 +164,16 @@ export default class AdminDashboard extends Component {
               </div>
               <div>
                 <div className="col-xs-4 ">
-                   <div className="upper-title">Fecha de Inicio</div>
-                   <span>{this.state.request.start_date}</span>
+                  <div className="upper-title">Fecha de Inicio</div>
+                  <span>{this.state.request.start_date}</span>
                 </div>
                 <div className="col-xs-4 ">
-                   <div className="upper-title">Fecha de Retorno</div>
-                   <span>{this.state.request.return_date}</span>
+                  <div className="upper-title">Fecha de Retorno</div>
+                  <span>{this.state.request.return_date}</span>
                 </div>
                 <div className="col-xs-4 ">
-                   <div className="upper-title">Fecha de Fin</div>
-                   <span>{this.state.request.end_date}</span>
+                  <div className="upper-title">Fecha de Fin</div>
+                  <span>{this.state.request.end_date}</span>
                 </div>
 
               </div>
