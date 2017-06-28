@@ -10,7 +10,7 @@ export default class NewLeaveRequest extends Component {
 
   alertOptions = {
     offset: 14,
-    position: 'bottom left',
+    position: 'top right',
     theme: 'dark',
     time: 5000,
     transition: 'scale'
@@ -25,13 +25,13 @@ export default class NewLeaveRequest extends Component {
 
   constructor(props) {
 
-    super(props),
-      this.state = {
-        dateFrom: moment(),
-        dateTo: moment(),
-        haveInformed: false
-      },
-      this.saveLeaveRequest = this.saveLeaveRequest.bind(this);
+    super(props);
+    this.state = {
+      dateFrom: moment(),
+      dateTo: moment(),
+      haveInformed: false
+    };
+    this.saveLeaveRequest = this.saveLeaveRequest.bind(this);
     this.toggleInformed = this.toggleInformed.bind(this);
     this.leaveRequestService = LeaveRequestService.getInstance();
     this.showAlert = this.showAlert.bind(this);
@@ -60,17 +60,17 @@ export default class NewLeaveRequest extends Component {
       this.showAlert('La fecha de inicio no puede ser mayor a la fecha de fin.');
       return;
 
-    } 
+    }
 
-      this.leaveRequestService
-        .createLeaveRequest({ start_date: this.state.dateFrom, end_date: this.state.dateTo, return_date: this.state.dateTo })
-        .then(
-        function (response) {
-            window.location = "/dashboard/leaves";
-        })
-        .catch(function (error) {
-         });
-    
+    this.leaveRequestService
+      .createLeaveRequest({ start_date: this.state.dateFrom, end_date: this.state.dateTo, return_date: this.state.dateTo })
+      .then(
+      function (response) {
+        window.location = "/dashboard/leaves";
+      })
+      .catch(function (error) {
+      });
+
 
   }
 
@@ -89,7 +89,7 @@ export default class NewLeaveRequest extends Component {
 
             <Col md={2}>
               <div>
-                <img className="new-leave-request-date-center-container" src={"/img/leave-line.png"} />
+                <img alt="" className="new-leave-request-date-center-container" src={"/img/leave-line.png"} />
               </div>
             </Col>
 

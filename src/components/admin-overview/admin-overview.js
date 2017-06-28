@@ -22,7 +22,7 @@ export default class AdminOverview extends Component {
           </Col>
           <Col xs={12} className="admin-overview-box-container no-padding">
             <Col md={4} className="admin-overview-box">
-              <div className="admin-overview-box-header">Pendientes</div>
+              <div className="admin-overview-box-header">Solicitudes Pendientes</div>
               <div className="admin-overview-box-body">
                 <div className="admin-overview-box-title">{this.props.pendingRequests}</div>
               </div>
