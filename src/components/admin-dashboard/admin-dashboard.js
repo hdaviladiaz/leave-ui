@@ -98,7 +98,7 @@ export default class AdminDashboard extends Component {
           onsuccess={this.onsuccess}
           onfailure={this.onfailure}
           onclick={this.onclick}
-          processedRequests={this.state.requests} />
+          requests={this.state.requests} />
 
         <PropsRoute
           path='/admin/dashboard/leaves'
