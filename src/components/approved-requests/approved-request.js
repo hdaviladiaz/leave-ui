@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Panel } from 'react-bootstrap';
-import './leave-request.css';
 import {_} from 'underscore';
 
-import LeaveRequestTable from '../leave-request-table/leave-request-table'
+import LeaveRequestTable from './leave-request-table/leave-request-table'
 
 export default class LeaveRequest extends Component {
 
@@ -15,7 +14,7 @@ export default class LeaveRequest extends Component {
             return (
           <Panel className="leave-request text-center">
             <img alt="" src={'/img/back.png'}  className="back-image"/>
-            <h4 className="gray-color">No has solicitado vacaciones</h4>
+            <h4 className="gray-color">No hay soolicitudes procesadas</h4>
           </Panel>
         );
       }
@@ -25,7 +24,7 @@ export default class LeaveRequest extends Component {
       <Panel className="leave-request">
         <h4>Mis Vacaciones</h4>
         <LeaveRequestTable
-          title='Pendientes'
+          title='Aprobadas'
           data={this.props.requests}
           onclick={this.props.onclick}/>
 
