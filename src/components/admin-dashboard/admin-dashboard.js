@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom'
 import './admin-dashboard.css';
 import AdminOverview from '../admin-overview/admin-overview.js'
 import ManageLeaveRequest from '../manage-leave-request/manage-leave-request.js'
+import ApprovedRequests from '../approved-requests/approved-requests.js'
 import LeaveRequestService from '../../services/leaveRequestService';
 import Modal from 'react-modal';
 import Widget from '../widget/widget';
@@ -88,6 +89,16 @@ export default class AdminDashboard extends Component {
         <AdminOverview
           days={15}
           pendingRequests={this.state.numberOfPendingdRequests} />
+
+
+        <PropsRoute
+          path='/admin/dashboard/'
+          exact={true}
+          component={ApprovedRequests}
+          onsuccess={this.onsuccess}
+          onfailure={this.onfailure}
+          onclick={this.onclick}
+          processedRequests={this.state.requests} />
 
         <PropsRoute
           path='/admin/dashboard/leaves'
