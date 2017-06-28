@@ -59,16 +59,18 @@ export default class NewLeaveRequest extends Component {
     if (this.state.dateFrom > this.state.dateTo) {
       this.showAlert('La fecha de inicio no puede ser mayor a la fecha de fin.');
       return;
-    }
 
-    this.leaveRequestService
-      .createLeaveRequest({ employee_id: 99, start_date: this.state.dateFrom, end_date: this.state.dateTo, return_date: this.state.dateTo })
-      .then(
-      function (response) {
-        window.location = "/dashboard/leaves";
-      })
-      .catch(function (error) {
-      });
+    } 
+
+      this.leaveRequestService
+        .createLeaveRequest({ start_date: this.state.dateFrom, end_date: this.state.dateTo, return_date: this.state.dateTo })
+        .then(
+        function (response) {
+            window.location = "/dashboard/leaves";
+        })
+        .catch(function (error) {
+         });
+    
 
   }
 
