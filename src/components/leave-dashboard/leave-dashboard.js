@@ -96,7 +96,7 @@ export default class LeaveDashboard extends Component {
             <div style={{ backgroundImage: "url('img/profile-bg.jpg')" }} className="bg-cover">
               <div className="p-xl text-center">
                 {/*<img src="img/user/09.jpg" alt="Image" className="img-thumbnail img-circle thumb128" />*/}
-                <h3 >Hector Davila</h3>
+                <h3 >{this.state.request.employee_name}</h3>
                 <p>{this.state.request.employee_id}</p>
               </div>
             </div>

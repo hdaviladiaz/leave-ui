@@ -3,7 +3,7 @@ import { Panel } from 'react-bootstrap';
 import './leave-request.css';
 import {_} from 'underscore';
 
-import LeaveRequestTable from './leave-request-table/leave-request-table'
+import LeaveRequestTable from '../leave-request-table/leave-request-table'
 
 export default class LeaveRequest extends Component {
 
@@ -19,16 +19,16 @@ export default class LeaveRequest extends Component {
           </Panel>
         );
       }
- 
+
     return (
-     
+
       <Panel className="leave-request">
         <h4>Mis Vacaciones</h4>
         <LeaveRequestTable
           title='Pendientes'
           data={this.props.requests}
           onclick={this.props.onclick}/>
-          
+
       </Panel>
     );
   }

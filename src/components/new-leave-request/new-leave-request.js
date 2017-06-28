@@ -14,7 +14,7 @@ export default class NewLeaveRequest extends Component {
 
   alertOptions = {
     offset: 14,
-    position: 'bottom left',
+    position: 'top right',
     theme: 'dark',
     time: 5000,
     transition: 'scale'
@@ -28,7 +28,6 @@ export default class NewLeaveRequest extends Component {
   }
 
   constructor(props) {
-
     super(props),
     this.state = {
       dateFrom: moment(),
@@ -68,13 +67,13 @@ export default class NewLeaveRequest extends Component {
   }
 
   mapPeopleToList = (people) => {
-   return _.map(people, function(person) {
-       return {
-         value: person.loginName +'@thoughtworks.com',
-         label: person.preferredName + ' (' + person.loginName + '@thoughtworks.com' + ')'
-       }
-   });
- }
+    return _.map(people, function(person) {
+      return {
+        value: person.loginName + '@thoughtworks.com',
+        label: person.preferredName + ' (' + person.loginName + '@thoughtworks.com' + ')'
+      }
+    });
+  }
 
   saveLeaveRequest() {
 
@@ -89,19 +88,15 @@ export default class NewLeaveRequest extends Component {
     }
 
     if (this.state.dateFrom.isAfter(this.state.dateTo) || this.state.dateFrom.isSame(this.state.dateTo)) {
-	      this.showAlert('La fecha de inicio no puede ser mayor o igual a la fecha de retorno.');	
-        return;
+      this.showAlert('La fecha de inicio no puede ser mayor o igual a la fecha de retorno.');
+      return;
     }
 
-    this.leaveRequestService
-      .createLeaveRequest({ start_date: this.state.dateFrom, end_date: this.state.dateTo, return_date: this.state.dateTo, approver_id: this.state.approvalPerson.value })
-      .then(
-      function (response) {
-          window.location = "/dashboard/leaves";
-      })
-      .catch(function (error) {
-         console.log(error);
-       });
+    this.leaveRequestService.createLeaveRequest({start_date: this.state.dateFrom, end_date: this.state.dateTo, return_date: this.state.dateTo, approver_id: this.state.approvalPerson.value}).then(function(response) {
+      window.location = "/dashboard/leaves";
+    }).catch(function(error) {
+      console.log(error);
+    });
   }
 
   render() {
@@ -113,45 +108,46 @@ export default class NewLeaveRequest extends Component {
             <Col md={5}>
               <div className="new-leave-request-date-right-container">
                 <span>Inicio</span>
-                <LeaveCalendar onSelectDate={this.handleDateFrom.bind(this)} startDate={moment()} />
+                <LeaveCalendar onSelectDate={this.handleDateFrom.bind(this)} startDate={moment()}/>
               </div>
             </Col>
 
             <Col md={2}>
               <div>
-                <img className="new-leave-request-date-center-container" src={"/img/leave-line.png"} />
+                <img alt="" className="new-leave-request-date-center-container" src={"/img/leave-line.png"} />
               </div>
             </Col>
 
             <Col md={5}>
               <div className="new-leave-request-date-left-container">
                 <span>Fin</span>
-                <LeaveCalendar onSelectDate={this.handleDateTo.bind(this)} startDate={moment().add(1, 'days')} />
+                <LeaveCalendar onSelectDate={this.handleDateTo.bind(this)} startDate={moment().add(1, 'days')}/>
               </div>
             </Col>
           </div>
-          <div className="new-leave-request-label-center-container">
+
+          <div className="new-leave-request-approver">
             <Col md={12}>
-              <p>Vinyl tumblr authentic sunt, echo park ea art party XOXO. Stumptown flannel proident, ut voluptate
-                  pickled ullamco etsy cillum poke normcore quinoa in thundercats. Non hashtag meditation, pinterest
-                  sriracha paleo reprehenderit consectetur bitters waistcoat. Farm-to-table quis viral, taxidermy
-                  intelligentsia helvetica culpa next level eu cronut street art kitsch sint vegan. Readymade scenester
-                  meditation consequat et cillum fixie velit gastropub dolore gentrify palo santo listicle literally semiotics. </p>
-            </Col>
-            <Col md={12}>
-              <div className="new-leave-request-approver">
-                <Select name="form-field-name" value={this.state.approvalPerson} options={this.state.options} onChange={this.onSelectChange}/>
-              </div>
+              <span>Solicitar aprobaci&#243;n a:</span>
+              <Select name="form-field-name" value={this.state.approvalPerson} options={this.state.options} onChange={this.onSelectChange}/>
             </Col>
           </div>
 
           <div className="new-leave-request-label-center-container">
             <Col md={12}>
+              <i>Vinyl tumblr authentic sunt, echo park ea art party XOXO. Stumptown flannel proident, ut voluptate pickled ullamco etsy cillum poke normcore quinoa in thundercats. Non hashtag meditation, pinterest sriracha paleo reprehenderit consectetur bitters waistcoat. Farm-to-table quis viral, taxidermy intelligentsia helvetica culpa next level eu cronut street art kitsch sint vegan. Readymade scenester meditation consequat et cillum fixie velit gastropub dolore gentrify palo santo listicle literally semiotics.
+              </i>
+            </Col>
+          </div>
+
+          <div className="new-leave-request-checker">
+            <Col md={12}>
               <input type="checkbox" value="" defaultChecked={this.state.haveInformed} onChange={this.toggleInformed}/>
-              <label>&nbsp; He confirmado a mi equipo y mi l&#237;der de proyecto
+              <label>&nbsp; He confirmado con mi equipo y mi l&#237;der de proyecto
               </label>
             </Col>
           </div>
+
           <div className="new-leave-request-button-center-container">
             <Col md={5}/>
             <Col md={2}>

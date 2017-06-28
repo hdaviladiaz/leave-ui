@@ -27,7 +27,9 @@ export default class Overview extends Component {
 
   render() {
     return (
+      
       <Panel>
+
         <div className="overview">
           <Col xs={12}>
             <h4>{this.today}</h4>
@@ -53,6 +55,7 @@ export default class Overview extends Component {
           </Col>
         </div>
       </Panel>
+      
     );
   }
 }

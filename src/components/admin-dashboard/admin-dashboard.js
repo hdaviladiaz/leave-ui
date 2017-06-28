@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom'
 import './admin-dashboard.css';
 import AdminOverview from '../admin-overview/admin-overview.js'
 import ManageLeaveRequest from '../manage-leave-request/manage-leave-request.js'
+import ApprovedRequests from '../approved-requests/approved-requests.js'
 import LeaveRequestService from '../../services/leaveRequestService';
 import Modal from 'react-modal';
 import Widget from '../widget/widget';
@@ -111,6 +112,16 @@ export default class AdminDashboard extends Component {
           days={15}
           pendingRequests={this.state.numberOfPendingdRequests} />
 
+
+        <PropsRoute
+          path='/admin/dashboard/'
+          exact={true}
+          component={ApprovedRequests}
+          onsuccess={this.onsuccess}
+          onfailure={this.onfailure}
+          onclick={this.onclick}
+          requests={this.state.requests} />
+
         <PropsRoute
           path='/admin/dashboard/leaves'
           exact={true}
@@ -132,7 +143,7 @@ export default class AdminDashboard extends Component {
             <div style={{ backgroundImage: "url('img/profile-bg.jpg')" }} className="bg-cover">
               <div className="p-xl text-center">
                 {/*<img src="img/user/09.jpg" alt="Image" className="img-thumbnail img-circle thumb128" />*/}
-                <h3 >Hector Davila</h3>
+                <h3 >{this.state.request.employee_name}</h3>
                 <p>{this.state.request.employee_id}</p>
               </div>
             </div>
