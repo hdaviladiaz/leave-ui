@@ -9,6 +9,9 @@ export default class LeaveRequestService extends RequestService {
   }
 
   getRequests() {
+    return this.request({ url: 'leave_requests/me' });
+  }
+  getRequestsToApprove() {
     return this.request({ url: 'leave_requests/me/approve' });
   }
 

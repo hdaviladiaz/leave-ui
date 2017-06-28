@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
 import { Glyphicon } from 'react-bootstrap';
 import './manage-request-table-row.css';
-import moment from 'moment';
 
-
-const deleteStatus = 2;
-const seccessStatus = 1;
 export default class ManageRequestTableRow extends Component {
 
   initialize() {

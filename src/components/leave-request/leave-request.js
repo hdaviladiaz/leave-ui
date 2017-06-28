@@ -3,12 +3,14 @@ import { Panel } from 'react-bootstrap';
 import './leave-request.css';
 import {_} from 'underscore';
 
+import LeaveRequestTable from './leave-request-table/leave-request-table'
+
 export default class LeaveRequest extends Component {
 
   render() {
-    if(_.isEmpty(this.props.leaves) ||
-       _.isNull(this.props.leaves) ||
-       _.isUndefined(this.props.leaves)
+    if(_.isEmpty(this.props.requests) ||
+       _.isNull(this.props.requests) ||
+       _.isUndefined(this.props.requests)
        ){
             return (
           <Panel className="leave-request text-center">
@@ -17,10 +19,16 @@ export default class LeaveRequest extends Component {
           </Panel>
         );
       }
-
+ 
     return (
+     
       <Panel className="leave-request">
-        LEAVE REQUEST
+        <h4>Mis Vacaciones</h4>
+        <LeaveRequestTable
+          title='Pendientes'
+          data={this.props.requests}
+          onclick={this.props.onclick}/>
+          
       </Panel>
     );
   }
