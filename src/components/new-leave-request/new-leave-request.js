@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Panel, Col } from 'react-bootstrap';
+import React, {Component} from 'react';
+import {Panel, Col} from 'react-bootstrap';
 import LeaveCalendar from '../leave-calendar/leave-calendar';
 import LeaveRequestService from '../../services/leaveRequestService'
 import PeopleService from '../../services/peopleService';
@@ -9,7 +9,10 @@ import moment from 'moment';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 import _ from 'underscore';
+<<<<<<< HEAD
 
+=======
+>>>>>>> [#30] with @evelasco - add a component to select who will approve new leave request
 
 export default class NewLeaveRequest extends Component {
 
@@ -31,12 +34,22 @@ export default class NewLeaveRequest extends Component {
   constructor(props) {
 
     super(props),
+<<<<<<< HEAD
       this.state = {
         dateFrom: moment(),
         dateTo: moment(),
         haveInformed: false,
         options: []
       },
+=======
+    this.state = {
+      dateFrom: moment(),
+      dateTo: moment(),
+      haveInformed: false,
+      approvalPerson: {},
+      options: []
+    },
+>>>>>>> [#30] with @evelasco - add a component to select who will approve new leave request
     this.peopleService = PeopleService.getInstance();
     this.saveLeaveRequest = this.saveLeaveRequest.bind(this);
     this.toggleInformed = this.toggleInformed.bind(this);
@@ -46,24 +59,40 @@ export default class NewLeaveRequest extends Component {
   }
 
   componentDidMount() {
+<<<<<<< HEAD
    this.peopleService.getOfficePeople().then(people => this.setState({options: this.mapPeopleToList(people)})).catch(error => this.setState({options: []}));
  }
 
   handleDateFrom(dateFrom) {
     this.setState({ dateFrom: dateFrom });
     this.setState({ dateTo: dateFrom.add(1, 'days') });
+=======
+    this.peopleService.getOfficePeople().then(people => this.setState({options: this.mapPeopleToList(people)})).catch(error => this.setState({options: []}));
+  }
+
+  handleDateFrom(dateFrom) {
+    this.setState({dateFrom: dateFrom});
+>>>>>>> [#30] with @evelasco - add a component to select who will approve new leave request
   }
 
   handleDateTo(dateTo) {
-    this.setState({ dateTo: dateTo });
+    this.setState({dateTo: dateTo});
   }
 
   toggleInformed() {
-    this.setState({ haveInformed: !this.state.haveInformed })
+    this.setState({
+      haveInformed: !this.state.haveInformed
+    })
   }
 
+<<<<<<< HEAD
   onSelectChange(val) {
     this.setState({approvalPerson: val});
+=======
+  logChange(val) {
+    this.setState({approvalPerson: val});
+    console.log("Selected: " + JSON.stringify(val));
+>>>>>>> [#30] with @evelasco - add a component to select who will approve new leave request
   }
 
   mapPeopleToList = (people) => {
@@ -126,6 +155,11 @@ export default class NewLeaveRequest extends Component {
                   intelligentsia helvetica culpa next level eu cronut street art kitsch sint vegan. Readymade scenester
                   meditation consequat et cillum fixie velit gastropub dolore gentrify palo santo listicle literally semiotics. </p>
 
+            <Col md={5}>
+              <div className="new-leave-request-date-left-container">
+                <span>Fin</span>
+                <LeaveCalendar onSelectDate={this.handleDateTo.bind(this)} startDate={moment().add(1, 'days')}/>
+              </div>
             </Col>
             <Col md={12}>
               <div className="new-leave-request-approver">
@@ -135,17 +169,31 @@ export default class NewLeaveRequest extends Component {
           </div>
           <div className="new-leave-request-label-center-container">
             <Col md={12}>
-              <input type="checkbox" value="" defaultChecked={this.state.haveInformed} onChange={this.toggleInformed} />
-              <label>&nbsp; He confirmado a mi equipo y mi PM </label>
+              <p>Vinyl tumblr authentic sunt, echo park ea art party XOXO. Stumptown flannel proident, ut voluptate pickled ullamco etsy cillum poke normcore quinoa in thundercats. Non hashtag meditation, pinterest sriracha paleo reprehenderit consectetur bitters waistcoat. Farm-to-table quis viral, taxidermy intelligentsia helvetica culpa next level eu cronut street art kitsch sint vegan. Readymade scenester meditation consequat et cillum fixie velit gastropub dolore gentrify palo santo listicle literally semiotics.
+              </p>
+
+            </Col>
+            <Col md={12}>
+              <div className="new-leave-request-approver">
+                <Select name="form-field-name" value={this.state.approvalPerson} options={this.state.options} onChange={this.logChange}/>
+              </div>
+            </Col>
+          </div>
+
+          <div className="new-leave-request-label-center-container">
+            <Col md={12}>
+              <input type="checkbox" value="" defaultChecked={this.state.haveInformed} onChange={this.toggleInformed}/>
+              <label>&nbsp; He confirmado a mi equipo y mi PM
+              </label>
             </Col>
           </div>
           <div className="new-leave-request-button-center-container">
-            <Col md={5} />
+            <Col md={5}/>
             <Col md={2}>
-              <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
+              <AlertContainer ref={a => this.msg = a} {...this.alertOptions}/>
               <button className="buttonSend" onClick={this.saveLeaveRequest.bind(this)}>ENVIAR</button>
             </Col>
-            <Col md={5} />
+            <Col md={5}/>
           </div>
         </Panel>
       </div>
