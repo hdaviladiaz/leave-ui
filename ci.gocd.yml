@@ -1,0 +1,66 @@
+pipelines:
+  leave-ecuador:
+    group: labs-leave-ec
+    materials:
+      repo:
+        git: git@git.thoughtworks.net:leave/leave-ui.git
+    stages:
+      - unit:
+          jobs:
+            install:
+              tasks:
+                - exec:
+                    command: /bin/bash
+                    arguments:
+                     - -c
+                     - npm install
+                - exec:
+                    command: /bin/bash
+                    arguments:
+                     - -c
+                     - CI=true npm test
+      - deploy_qa:
+          approval:
+            type: manual
+          environment_variables:
+            APP_BACKEND: leave-backend
+            APP_FRONTEND: leave-ui
+            APP_ENV: qa
+          jobs:
+            install:
+              tasks:
+                - exec:
+                    command: /bin/bash
+                    arguments:
+                     - -c
+                     - ./scripts/deploy.sh
+      - deploy_uat:
+          approval:
+            type: manual
+          environment_variables:
+            APP_BACKEND: leave-backend
+            APP_FRONTEND: leave-ui
+            APP_ENV: uat
+          jobs:
+            install:
+              tasks:
+                - exec:
+                    command: /bin/bash
+                    arguments:
+                     - -c
+                     - ./scripts/deploy.sh
+      - deploy_prod:
+          approval:
+            type: manual
+          environment_variables:
+            APP_BACKEND: leave-backend
+            APP_FRONTEND: leave-ui
+            APP_ENV: prod
+          jobs:
+            install:
+              tasks:
+                - exec:
+                    command: /bin/bash
+                    arguments:
+                     - -c
+                     - ./scripts/deploy.sh

@@ -21,4 +21,13 @@ describe('PeopleService', () => {
     return expect(resolvedUrl).toEqual(expectedUrl);
   });
 
+  it('should call correct endpoint when getOfficePeople is called', () => {
+    let expectedUrl = 'people/except_me'
+    peopleService.request = jest.fn((config) => {
+      return config.url;
+    });
+    let resolvedUrl = peopleService.getOfficePeople();
+    return expect(resolvedUrl).toEqual(expectedUrl);
+  });
+
 });

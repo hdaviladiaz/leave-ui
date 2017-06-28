@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
 import { Glyphicon } from 'react-bootstrap';
 import './manage-request-table-row.css';
-import moment from 'moment';
 
-
-const deleteStatus = 2;
-const seccessStatus = 1;
 export default class ManageRequestTableRow extends Component {
 
   initialize() {
@@ -28,17 +24,17 @@ export default class ManageRequestTableRow extends Component {
       <div className="manage-request-table-item">
         <div onClick={this.onclick.bind(this, this.props.request)} className="manage-request-table-item-body">
           <div className="manage-request-table-item-time">{this.props.request.start_date}</div>
-          <div className="manage-request-table-item-name">{this.props.request.employee_id}</div>
+          <div className="manage-request-table-item-name">{this.props.request.employee_name}</div>
         </div>
         <div className={`manage-request-table-item-tools ${this.showToolClass}`}>
           <span title="Aceptar" onClick={this.onsuccess.bind(this, this.props.request)} className="manage-request-table-item-tools-icon success-icon">
             <Glyphicon
-              className='text-success'
+              className='text-success animate'
               glyph="ok-sign" />
           </span>
           <span title="Rechazar" onClick={this.onfailure.bind(this, this.props.request)} className="manage-request-table-item-tools-icon">
             <Glyphicon
-              className='text-danger'
+              className='text-danger animate'
               glyph="remove-sign" />
           </span>
         </div>
