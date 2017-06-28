@@ -130,28 +130,33 @@ export default class NewLeaveRequest extends Component {
               </div>
             </Col>
           </div>
-          <div className="new-leave-request-label-center-container">
-            <Col md={12}>
-              <p>Vinyl tumblr authentic sunt, echo park ea art party XOXO. Stumptown flannel proident, ut voluptate
-                  pickled ullamco etsy cillum poke normcore quinoa in thundercats. Non hashtag meditation, pinterest
-                  sriracha paleo reprehenderit consectetur bitters waistcoat. Farm-to-table quis viral, taxidermy
-                  intelligentsia helvetica culpa next level eu cronut street art kitsch sint vegan. Readymade scenester
-                  meditation consequat et cillum fixie velit gastropub dolore gentrify palo santo listicle literally semiotics. </p>
-            </Col>
-            <Col md={12}>
-              <div className="new-leave-request-approver">
+
+
+          <div className="new-leave-request-approver">
+              <Col md={12}>
+                <span>Solicitar aprobaci&#243;n a:</span>
                 <Select name="form-field-name" value={this.state.approvalPerson} options={this.state.options} onChange={this.onSelectChange}/>
-              </div>
             </Col>
           </div>
 
           <div className="new-leave-request-label-center-container">
             <Col md={12}>
+              <i>Vinyl tumblr authentic sunt, echo park ea art party XOXO. Stumptown flannel proident, ut voluptate
+                  pickled ullamco etsy cillum poke normcore quinoa in thundercats. Non hashtag meditation, pinterest
+                  sriracha paleo reprehenderit consectetur bitters waistcoat. Farm-to-table quis viral, taxidermy
+                  intelligentsia helvetica culpa next level eu cronut street art kitsch sint vegan. Readymade scenester
+                  meditation consequat et cillum fixie velit gastropub dolore gentrify palo santo listicle literally semiotics. </i>
+            </Col>
+          </div>
+
+          <div className="new-leave-request-checker">
+            <Col md={12}>
               <input type="checkbox" value="" defaultChecked={this.state.haveInformed} onChange={this.toggleInformed}/>
-              <label>&nbsp; He confirmado a mi equipo y mi l&#237;der de proyecto
+              <label>&nbsp; He confirmado con mi equipo y mi l&#237;der de proyecto
               </label>
             </Col>
           </div>
+
           <div className="new-leave-request-button-center-container">
             <Col md={5}/>
             <Col md={2}>
