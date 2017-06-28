@@ -32,7 +32,7 @@ export default class NewLeaveRequest extends Component {
     super(props),
     this.state = {
       dateFrom: moment(),
-      dateTo: moment(),
+      dateTo: moment().add(1, 'days'),
       haveInformed: false,
       approvalPerson: {},
       options: []
@@ -83,10 +83,14 @@ export default class NewLeaveRequest extends Component {
       return;
     }
 
-    if (this.state.dateFrom > this.state.dateTo) {
-      this.showAlert('La fecha de inicio no puede ser mayor a la fecha de fin.');
+    if (this.state.approvalPerson == null || this.state.approvalPerson.value === undefined) {
+      this.showAlert('Por favor seleccione un aprobador.');
       return;
+    }
 
+    if (this.state.dateFrom.isAfter(this.state.dateTo) || this.state.dateFrom.isSame(this.state.dateTo)) {
+	      this.showAlert('La fecha de inicio no puede ser mayor o igual a la fecha de retorno.');	
+        return;
     }
 
     this.leaveRequestService
@@ -96,9 +100,8 @@ export default class NewLeaveRequest extends Component {
           window.location = "/dashboard/leaves";
       })
       .catch(function (error) {
+         console.log(error);
        });
-
-
   }
 
   render() {
