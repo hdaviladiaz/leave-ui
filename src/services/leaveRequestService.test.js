@@ -37,13 +37,21 @@ describe('LeaveRequestService', () => {
     return expect(expectedConfig.data).toEqual(expectedData);
   });
 
-  it('should call correct endpoint when getRequestAdminList is called', () => {
-    let expectedUrl = "leave_requests";
+  it('should call correct endpoint when getRequests is called', () => {
+    let expectedUrl = "leave_requests/me";
     leaveRequestService.request = jest.fn((config) => {
       return config.url;
     });
-    let resolvedUrl = leaveRequestService.getRequestAdminList();
+    let resolvedUrl = leaveRequestService.getRequests();
+    return expect(resolvedUrl).toEqual(expectedUrl);
+  });
 
+  it('should call correct endpoint when getRequestsToApprove is called', () => {
+    let expectedUrl = "leave_requests/me/approve";
+    leaveRequestService.request = jest.fn((config) => {
+      return config.url;
+    });
+    let resolvedUrl = leaveRequestService.getRequestsToApprove();
     return expect(resolvedUrl).toEqual(expectedUrl);
   });
 });

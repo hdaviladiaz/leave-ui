@@ -11,4 +11,9 @@ export default class PeopleService extends RequestService {
   getLoggedUserInformation() {
     return this.request({ url: 'people/me' });
   }
+
+
+  getOfficePeople() {
+    return this.request({ url: 'people/except_me' });
+  }
 }

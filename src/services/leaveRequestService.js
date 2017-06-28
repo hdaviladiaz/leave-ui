@@ -8,8 +8,11 @@ export default class LeaveRequestService extends RequestService {
     return this.instance;
   }
 
-  getRequestAdminList() {
-    return this.request({ url: 'leave_requests' });
+  getRequests() {
+    return this.request({ url: 'leave_requests/me' });
+  }
+  getRequestsToApprove() {
+    return this.request({ url: 'leave_requests/me/approve' });
   }
 
   createLeaveRequest(data) {
