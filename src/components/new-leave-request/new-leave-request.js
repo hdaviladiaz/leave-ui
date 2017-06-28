@@ -39,6 +39,7 @@ export default class NewLeaveRequest extends Component {
 
   handleDateFrom(dateFrom) {
     this.setState({ dateFrom: dateFrom });
+    this.setState({ dateTo: dateFrom.add(1, 'days') });
   }
 
   handleDateTo(dateTo) {
@@ -50,28 +51,26 @@ export default class NewLeaveRequest extends Component {
   }
 
   saveLeaveRequest() {
-
     if (!this.state.haveInformed) {
       this.showAlert('Por favor informe a su equipo y su PM y seleccione la opción.');
       return;
     }
 
-    if (this.state.dateFrom > this.state.dateTo) {
-      this.showAlert('La fecha de inicio no puede ser mayor a la fecha de fin.');
+    if (this.state.dateFrom >= this.state.dateTo) {
+      this.showAlert('La fecha de inicio no puede ser mayor o igual a la fecha de retorno.');
       return;
 
-    } 
+    }
 
-      this.leaveRequestService
-        .createLeaveRequest({ start_date: this.state.dateFrom, end_date: this.state.dateTo, return_date: this.state.dateTo })
-        .then(
-        function (response) {
-            window.location = "/dashboard/leaves";
-        })
-        .catch(function (error) {
-         });
-    
-
+    this.leaveRequestService
+      .createLeaveRequest({ start_date: this.state.dateFrom, end_date: this.state.dateTo, return_date: this.state.dateTo })
+      .then(
+      function (response) {
+        window.location = "/dashboard/leaves";
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   render() {
@@ -96,7 +95,8 @@ export default class NewLeaveRequest extends Component {
             <Col md={5}>
               <div className="new-leave-request-date-left-container">
                 <span>Fin</span>
-                <LeaveCalendar onSelectDate={this.handleDateTo.bind(this)} startDate={moment().add(1, 'days')} />
+                {/*<LeaveCalendar onSelectDate={this.handleDateTo.bind(this)} startDate={moment().add(1, 'days')} />*/}
+                 <LeaveCalendar onSelectDate={this.handleDateTo.bind(this)} startDate={this.state.dateFrom.add(1, 'days')} />
               </div>
             </Col>
           </div>
