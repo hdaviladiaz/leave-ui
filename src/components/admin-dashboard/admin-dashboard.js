@@ -7,6 +7,7 @@ import ApprovedRequests from '../approved-requests/approved-requests.js'
 import LeaveRequestService from '../../services/leaveRequestService';
 import Modal from 'react-modal';
 import Widget from '../widget/widget';
+import AlertContainer from 'react-alert';
 
 const pendingStatus = 'pending';
 
@@ -38,6 +39,21 @@ const customStyles = {
 
 export default class AdminDashboard extends Component {
 
+alertOptions = {
+    offset: 14,
+    position: 'top right',
+    theme: 'dark',
+    time: 5000,
+    transition: 'scale'
+  }
+
+  showAlert = (message) => {
+    this.msg.show(message, {
+      time: 3000,
+      type: 'success'
+    })
+  }
+
   constructor(props) {
     super(props);
     this.leaveRequestService = LeaveRequestService.getInstance();
@@ -54,6 +70,8 @@ export default class AdminDashboard extends Component {
         .then(
         function (response) {
           custom.getLeavesStatus();
+          custom.showAlert('Solicitud de vacaciones aprobada.');
+     
         })
         .catch(function (error) {
           console.log(error);
@@ -108,6 +126,8 @@ export default class AdminDashboard extends Component {
   render() {
     return (
       <div>
+          <AlertContainer ref={a => this.msg = a} {...this.alertOptions}/>
+            
         <AdminOverview
           days={15}
           pendingRequests={this.state.numberOfPendingdRequests} />
