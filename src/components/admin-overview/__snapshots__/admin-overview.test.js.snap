@@ -15,7 +15,7 @@ exports[`should render AdminOverview as snapshot 1`] = `
         className="col-xs-12"
       >
         <h4>
-          28 junio 2017
+          29 junio 2017
         </h4>
         <span
           className="text-muted"
@@ -32,7 +32,7 @@ exports[`should render AdminOverview as snapshot 1`] = `
           <div
             className="admin-overview-box-header"
           >
-            Pendientes
+            Solicitudes Pendientes
           </div>
           <div
             className="admin-overview-box-body"

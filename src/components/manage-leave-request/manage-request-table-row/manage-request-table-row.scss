@@ -33,3 +33,8 @@
    width: 60%;
    float: left;
 }
+.manage-request-table-item:hover .leave-request-table-item-status{
+  font-weight: bold;
+  margin-right: 15px;
+  transition: margin 0.3s linear;
+}

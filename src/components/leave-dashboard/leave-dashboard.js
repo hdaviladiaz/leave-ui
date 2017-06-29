@@ -35,14 +35,15 @@ const PropsRoute = ({ component, ...rest }) => {
 }
 
 export default class LeaveDashboard extends Component {
-  
-  
+
+
   constructor(props) {
     super(props);
     this.state = {
       modalIsOpen: false,
       request: {}
     };
+
     this.leaveRequestService = LeaveRequestService.getInstance();
 
     this.onclick = (request) => {
@@ -56,12 +57,20 @@ export default class LeaveDashboard extends Component {
     this.onclick = this.onclick.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
-
+  translateStatus() {
+    switch (this.state.request.status) {
+      case 'pending': return 'pendiente';
+      case 'approved': return 'aprobada';
+      case 'rejected': return 'rechazada';
+      case 'taken': return 'tomada';
+      case 'not_taken': return 'no tomada';
+    }
+  }
   componentDidMount() {
     this.leaveRequestService
       .getRequests()
       .then(requests => {
-        this.setState({ requests: requests});
+        this.setState({ requests: requests });
       })
       .catch(error => {
         this.setState({ requests: [] });
@@ -90,14 +99,18 @@ export default class LeaveDashboard extends Component {
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="Detalles">
+          <div className={`leave-dashboar-modal-status ${this.state.request.status}`}>
+            <small>{this.translateStatus()} </small>
+          </div>
           <div className="close-modal-container" onClick={this.closeModal.bind(this)}><span >X</span></div>
           <div>
 
             <div style={{ backgroundImage: "url('img/profile-bg.jpg')" }} className="bg-cover">
-              <div className="p-xl text-center">
+              <div className="p-xl text-center leave-dashboard-modal-header">
                 {/*<img src="img/user/09.jpg" alt="Image" className="img-thumbnail img-circle thumb128" />*/}
                 <h3 >{this.state.request.employee_name}</h3>
                 <p>{this.state.request.employee_id}</p>
+                <p><b>Aprobador: </b>{this.state.request.approver_id}</p>
               </div>
             </div>
 
@@ -128,16 +141,16 @@ export default class LeaveDashboard extends Component {
               </div>
               <div>
                 <div className="col-xs-4 ">
-                   <div className="upper-title">Fecha de Inicio</div>
-                   <span>{this.state.request.start_date}</span>
+                  <div className="upper-title">Fecha de Inicio</div>
+                  <span>{this.state.request.start_date}</span>
                 </div>
                 <div className="col-xs-4 ">
-                   <div className="upper-title">Fecha de Retorno</div>
-                   <span>{this.state.request.return_date}</span>
+                  <div className="upper-title">Fecha de Retorno</div>
+                  <span>{this.state.request.return_date}</span>
                 </div>
                 <div className="col-xs-4 ">
-                   <div className="upper-title">Fecha de Fin</div>
-                   <span>{this.state.request.end_date}</span>
+                  <div className="upper-title">Fecha de Fin</div>
+                  <span>{this.state.request.end_date}</span>
                 </div>
 
               </div>

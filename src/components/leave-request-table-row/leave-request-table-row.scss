@@ -33,3 +33,18 @@
    width: 60%;
    float: left;
 }
+.leave-request-table-item-status{
+    font-size: 14px;
+    margin-top: 20px;
+    float: right;
+    background-color: #eee;
+    padding: 0 5px;
+    border-radius: 5px 5px 0 0;
+    transition: margin 0.3s linear;
+}
+
+.leave-request-table-item:hover .leave-request-table-item-status{
+  font-weight: bold;
+  margin-right: 15px;
+  transition: margin 0.3s linear;
+}
