@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Panel, Col} from 'react-bootstrap';
+import React, { Component } from 'react';
+import { Panel, Col } from 'react-bootstrap';
 import LeaveCalendar from '../leave-calendar/leave-calendar';
 import LeaveRequestService from '../../services/leaveRequestService'
 import PeopleService from '../../services/peopleService';
@@ -9,8 +9,13 @@ import moment from 'moment';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 import _ from 'underscore';
+import PropTypes from 'prop-types'
 
 export default class NewLeaveRequest extends Component {
+
+  static contextTypes = {
+    router: PropTypes.object
+  }
 
   alertOptions = {
     offset: 14,
@@ -29,14 +34,14 @@ export default class NewLeaveRequest extends Component {
 
   constructor(props) {
     super(props),
-    this.state = {
-      dateFrom: moment(),
-      dateTo: moment().add(1, 'days'),
-      haveInformed: false,
-      approvalPerson: {},
-      options: []
-    },
-    this.peopleService = PeopleService.getInstance();
+      this.state = {
+        dateFrom: moment(),
+        dateTo: moment().add(1, 'days'),
+        haveInformed: false,
+        approvalPerson: {},
+        options: []
+      },
+      this.peopleService = PeopleService.getInstance();
     this.saveLeaveRequest = this.saveLeaveRequest.bind(this);
     this.toggleInformed = this.toggleInformed.bind(this);
     this.leaveRequestService = LeaveRequestService.getInstance();
@@ -45,15 +50,15 @@ export default class NewLeaveRequest extends Component {
   }
 
   componentDidMount() {
-    this.peopleService.getOfficePeople().then(people => this.setState({options: this.mapPeopleToList(people)})).catch(error => this.setState({options: []}));
+    this.peopleService.getOfficePeople().then(people => this.setState({ options: this.mapPeopleToList(people) })).catch(error => this.setState({ options: [] }));
   }
 
   handleDateFrom(dateFrom) {
-    this.setState({dateFrom: dateFrom});
+    this.setState({ dateFrom: dateFrom });
   }
 
   handleDateTo(dateTo) {
-    this.setState({dateTo: dateTo});
+    this.setState({ dateTo: dateTo });
   }
 
   toggleInformed() {
@@ -63,11 +68,11 @@ export default class NewLeaveRequest extends Component {
   }
 
   onSelectChange(val) {
-    this.setState({approvalPerson: val});
+    this.setState({ approvalPerson: val });
   }
 
   mapPeopleToList = (people) => {
-    return _.map(people, function(person) {
+    return _.map(people, function (person) {
       return {
         value: person.loginName + '@thoughtworks.com',
         label: person.preferredName + ' (' + person.loginName + '@thoughtworks.com' + ')'
@@ -75,10 +80,11 @@ export default class NewLeaveRequest extends Component {
     });
   }
 
-  saveLeaveRequest() {
 
+  saveLeaveRequest() {
+    let custom = this;
     if (!this.state.haveInformed) {
-      this.showAlert('Por favor informe a su equipo y su PM y seleccione la opción.');
+      this.showAlert('Por favor informe a su equipo y su líder de proyecto y seleccione la opción.');
       return;
     }
 
@@ -92,11 +98,12 @@ export default class NewLeaveRequest extends Component {
       return;
     }
 
-    this.leaveRequestService.createLeaveRequest({start_date: this.state.dateFrom, end_date: this.state.dateTo, return_date: this.state.dateTo, approver_id: this.state.approvalPerson.value}).then(function(response) {
-      window.location = "/dashboard/leaves";
-    }).catch(function(error) {
-      console.log(error);
-    });
+    this.leaveRequestService.createLeaveRequest({ start_date: this.state.dateFrom, end_date: this.state.dateTo, return_date: this.state.dateTo, approver_id: this.state.approvalPerson.value })
+      .then(function (response) {
+        custom.context.router.history.push('/dashboard/leaves');
+      }).catch(function (error) {
+        console.log(error);
+      });
   }
 
   render() {
@@ -108,7 +115,7 @@ export default class NewLeaveRequest extends Component {
             <Col md={5}>
               <div className="new-leave-request-date-right-container">
                 <span>Inicio</span>
-                <LeaveCalendar onSelectDate={this.handleDateFrom.bind(this)} startDate={moment()}/>
+                <LeaveCalendar onSelectDate={this.handleDateFrom.bind(this)} startDate={moment()} />
               </div>
             </Col>
 
@@ -121,7 +128,7 @@ export default class NewLeaveRequest extends Component {
             <Col md={5}>
               <div className="new-leave-request-date-left-container">
                 <span>Fin</span>
-                <LeaveCalendar onSelectDate={this.handleDateTo.bind(this)} startDate={moment().add(1, 'days')}/>
+                <LeaveCalendar onSelectDate={this.handleDateTo.bind(this)} startDate={moment().add(1, 'days')} />
               </div>
             </Col>
           </div>
@@ -129,7 +136,7 @@ export default class NewLeaveRequest extends Component {
           <div className="new-leave-request-approver">
             <Col md={12}>
               <span>Solicitar aprobaci&#243;n a:</span>
-              <Select name="form-field-name" value={this.state.approvalPerson} options={this.state.options} onChange={this.onSelectChange}/>
+              <Select name="form-field-name" value={this.state.approvalPerson} options={this.state.options} onChange={this.onSelectChange} />
             </Col>
           </div>
 
@@ -142,19 +149,19 @@ export default class NewLeaveRequest extends Component {
 
           <div className="new-leave-request-checker">
             <Col md={12}>
-              <input type="checkbox" value="" defaultChecked={this.state.haveInformed} onChange={this.toggleInformed}/>
+              <input type="checkbox" value="" defaultChecked={this.state.haveInformed} onChange={this.toggleInformed} />
               <label>&nbsp; He confirmado con mi equipo y mi l&#237;der de proyecto
               </label>
             </Col>
           </div>
 
           <div className="new-leave-request-button-center-container">
-            <Col md={5}/>
+            <Col md={5} />
             <Col md={2}>
-              <AlertContainer ref={a => this.msg = a} {...this.alertOptions}/>
+              <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
               <button className="buttonSend" onClick={this.saveLeaveRequest.bind(this)}>ENVIAR</button>
             </Col>
-            <Col md={5}/>
+            <Col md={5} />
           </div>
         </Panel>
       </div>

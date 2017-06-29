@@ -5,6 +5,8 @@ import AdminOverview from '../admin-overview/admin-overview.js'
 import ManageLeaveRequest from '../manage-leave-request/manage-leave-request.js'
 import ApprovedRequests from '../approved-requests/approved-requests.js'
 import LeaveRequestService from '../../services/leaveRequestService';
+import ReactConfirmAlert, { confirmAlert } from 'react-confirm-alert';
+import '../utils/react-confirm-alert-custom.css'
 import Modal from 'react-modal';
 import Widget from '../widget/widget';
 import AlertContainer from 'react-alert';
@@ -25,6 +27,7 @@ const PropsRoute = ({ component, ...rest }) => {
     }} />
   );
 }
+
 const customStyles = {
   content: {
     width: '800px',
@@ -39,7 +42,7 @@ const customStyles = {
 
 export default class AdminDashboard extends Component {
 
-alertOptions = {
+  alertOptions = {
     offset: 14,
     position: 'top right',
     theme: 'dark',
@@ -64,32 +67,50 @@ alertOptions = {
 
 
     this.onsuccess = (request) => {
-      let custom = this;
-      this.leaveRequestService
-        .updateApproveStatus(request, "approved")
-        .then(
-        function (response) {
-          custom.getLeavesStatus();
-          custom.showAlert('Solicitud de vacaciones aprobada.');
-     
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
 
+      let custom = this;
+      confirmAlert({
+        title: '',
+        message: '¿Está seguro que desea aprobar esta solicitud?',
+        confirmLabel: 'Comfirmar',
+        cancelLabel: 'Cancelar',
+        onConfirm: () => {
+          this.leaveRequestService
+            .updateApproveStatus(request, "approved")
+            .then(
+            function (response) {
+              custom.getLeavesStatus();
+              custom.showAlert('Solicitud de vacaciones aprobada.');
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        },
+        onCancel: () => { },      // Action after Cancel 
+      })
     }
+
+
     this.onfailure = (request) => {
       let custom = this;
-
-      this.leaveRequestService
-        .updateApproveStatus(request, "rejected")
-        .then(
-        function (response) {
-          custom.getLeavesStatus();
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+      confirmAlert({
+        title: '',                        // Title dialog 
+        message: '¿Está seguro que desea rechazar esta solicitud?',               // Message dialog 
+        confirmLabel: 'Confirmar',                           // Text button confirm 
+        cancelLabel: 'Cancelar',                             // Text button cancel 
+        onConfirm: () => {
+          this.leaveRequestService
+            .updateApproveStatus(request, "rejected")
+            .then(
+            function (response) {
+              custom.getLeavesStatus();
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        },
+        onCancel: () => {},      // Action after Cancel 
+      })
     }
     this.onclick = (request) => {
       this.setState({ modalIsOpen: true });
@@ -126,8 +147,8 @@ alertOptions = {
   render() {
     return (
       <div>
-          <AlertContainer ref={a => this.msg = a} {...this.alertOptions}/>
-            
+        <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
+
         <AdminOverview
           days={15}
           pendingRequests={this.state.numberOfPendingdRequests} />
