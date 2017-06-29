@@ -106,6 +106,9 @@ export default class NewLeaveRequest extends Component {
 
 
 saveLeaveRequest(){
+
+    this.setState({loaded: false});
+
     if (!this.state.haveInformed) {
       this.showAlert('Por favor informe a su equipo y su PM y seleccione la opción.');
       this.setState({loaded: true});
