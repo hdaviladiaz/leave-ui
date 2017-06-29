@@ -27,25 +27,25 @@ export default class NewLeaveRequest extends Component {
   }
 
   loaderOptions = {
-      lines: 13,
-      length: 20,
-      width: 10,
-      radius: 30,
-      scale: 1.00,
-      corners: 1,
-      color: '#000',
-      opacity: 0.25,
-      rotate: 0,
-      direction: 1,
-      speed: 1,
-      trail: 60,
-      fps: 20,
-      zIndex: 2e9,
-      top: '50%',
-      left: '50%',
-      shadow: false,
-      hwaccel: false,
-      position: 'absolute'
+    lines: 13,
+    length: 20,
+    width: 10,
+    radius: 30,
+    scale: 1.00,
+    corners: 1,
+    color: '#000',
+    opacity: 0.25,
+    rotate: 0,
+    direction: 1,
+    speed: 1,
+    trail: 60,
+    fps: 20,
+    zIndex: 2e9,
+    top: '50%',
+    left: '50%',
+    shadow: false,
+    hwaccel: false,
+    position: 'absolute'
   }
 
   showAlert = (message) => {
@@ -56,7 +56,7 @@ export default class NewLeaveRequest extends Component {
   }
 
   constructor(props) {
-    super(props),
+    super(props);
     this.state = {
       dateFrom: moment(),
       dateTo: moment().add(1, 'days'),
@@ -64,7 +64,7 @@ export default class NewLeaveRequest extends Component {
       approvalPerson: {},
       loaded: true,
       options: []
-    },
+    };
     this.peopleService = PeopleService.getInstance();
     this.saveLeaveRequest = this.saveLeaveRequest.bind(this);
     this.toggleInformed = this.toggleInformed.bind(this);
@@ -99,38 +99,38 @@ export default class NewLeaveRequest extends Component {
     return _.map(people, function (person) {
       return {
         value: person.loginName + '@thoughtworks.com',
-        label: person.preferredName + ' (' + person.loginName + '@thoughtworks.com' + ')'
+        label: person.preferredName + ' (' + person.loginName + '@thoughtworks.com)'
       }
     });
   }
 
 
-saveLeaveRequest(){
+  saveLeaveRequest() {
 
-    this.setState({loaded: false});
+    this.setState({ loaded: false });
 
     if (!this.state.haveInformed) {
       this.showAlert('Por favor informe a su equipo y su PM y seleccione la opción.');
-      this.setState({loaded: true});
+      this.setState({ loaded: true });
       return;
     }
 
     if (this.state.approvalPerson == null || this.state.approvalPerson.value === undefined) {
       this.showAlert('Por favor seleccione un aprobador.');
-      this.setState({loaded: true});
+      this.setState({ loaded: true });
       return;
     }
 
     if (this.state.dateFrom.isAfter(this.state.dateTo) || this.state.dateFrom.isSame(this.state.dateTo)) {
       this.showAlert('La fecha de inicio no puede ser mayor o igual a la fecha de retorno.');
-      this.setState({loaded: true});
+      this.setState({ loaded: true });
       return;
     }
 
-    this.leaveRequestService.createLeaveRequest({start_date: this.state.dateFrom, end_date: this.state.dateTo, return_date: this.state.dateTo, approver_id: this.state.approvalPerson.value}).then(() => {
-      this.setState({loaded: true});
+    this.leaveRequestService.createLeaveRequest({ start_date: this.state.dateFrom, end_date: this.state.dateTo, return_date: this.state.dateTo, approver_id: this.state.approvalPerson.value }).then(() => {
+      this.setState({ loaded: true });
       window.location = "/dashboard/leaves";
-    }).catch(function(error) {
+    }).catch(function (error) {
       console.log(error);
     });
   }
@@ -151,7 +151,7 @@ saveLeaveRequest(){
 
             <Col md={2}>
               <div>
-                <img alt="" className="new-leave-request-date-center-container" src={"/img/leave-line.png"}/>
+                <img alt="" className="new-leave-request-date-center-container" src={"/img/leave-line.png"} />
               </div>
             </Col>
 
@@ -186,12 +186,12 @@ saveLeaveRequest(){
           </div>
           <Loader loaded={this.state.loaded} options={this.loaderOptions}>
             <div className="new-leave-request-button-center-container">
-              <Col md={5}/>
+              <Col md={5} />
               <Col md={2}>
-                <AlertContainer ref={a => this.msg = a} {...this.alertOptions}/>
+                <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
                 <button className="buttonSend" onClick={this.saveLeaveRequest.bind(this)}>ENVIAR</button>
               </Col>
-              <Col md={5}/>
+              <Col md={5} />
             </div>
           </Loader>
         </Panel>

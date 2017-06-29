@@ -6,6 +6,7 @@ import LeaveRequest from '../leave-request/leave-request.js'
 import NewLeaveRequest from '../new-leave-request/new-leave-request'
 import LeaveRequestService from '../../services/leaveRequestService';
 import Modal from 'react-modal';
+import I18n from '../../services/i18n';
 import Widget from '../widget/widget';
 
 const customStyles = {
@@ -57,15 +58,7 @@ export default class LeaveDashboard extends Component {
     this.onclick = this.onclick.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
-  translateStatus() {
-    switch (this.state.request.status) {
-      case 'pending': return 'pendiente';
-      case 'approved': return 'aprobada';
-      case 'rejected': return 'rechazada';
-      case 'taken': return 'tomada';
-      case 'not_taken': return 'no tomada';
-    }
-  }
+  
   componentDidMount() {
     this.leaveRequestService
       .getRequests()
@@ -100,7 +93,7 @@ export default class LeaveDashboard extends Component {
           style={customStyles}
           contentLabel="Detalles">
           <div className={`leave-dashboar-modal-status ${this.state.request.status}`}>
-            <small>{this.translateStatus()} </small>
+            <small>{I18n.translate(this.state.request.status)} </small>
           </div>
           <div className="close-modal-container" onClick={this.closeModal.bind(this)}><span >X</span></div>
           <div>

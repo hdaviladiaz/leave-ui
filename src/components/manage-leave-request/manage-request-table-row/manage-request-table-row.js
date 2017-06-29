@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Glyphicon } from 'react-bootstrap';
 import './manage-request-table-row.css';
+import I18n from '../../../services/i18n';
 
 export default class ManageRequestTableRow extends Component {
 
@@ -14,16 +15,6 @@ export default class ManageRequestTableRow extends Component {
       this.onfailure = this.props.onfailure || this.onfailure;
       this.showToolClass='show';
       this.showStatusClass='hidden';
-    }
-  }
-
-   translateStatus() {
-    switch (this.props.request.status) {
-      case 'pending': return 'pendiente';
-      case 'approved': return 'aprobada';
-      case 'rejected': return 'rechazada';
-      case 'taken': return 'tomada';
-      case 'not_taken': return 'no tomada';
     }
   }
 
@@ -49,7 +40,7 @@ export default class ManageRequestTableRow extends Component {
           </span>
         </div>
         <div className={`manage-request-table-item-tools ${this.showStatusClass}`}>
-          <span className={`leave-request-table-item-status ${this.props.request.status}`}>{this.translateStatus()}</span>
+          <span className={`leave-request-table-item-status ${this.props.request.status}`}>{I18n.translate(this.props.request.status)}</span>
         </div>
       </div>
     );

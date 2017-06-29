@@ -5,7 +5,8 @@ import AdminOverview from '../admin-overview/admin-overview.js'
 import ManageLeaveRequest from '../manage-leave-request/manage-leave-request.js'
 import ApprovedRequests from '../approved-requests/approved-requests.js'
 import LeaveRequestService from '../../services/leaveRequestService';
-import ReactConfirmAlert, { confirmAlert } from 'react-confirm-alert';
+import I18n from '../../services/i18n';
+import { confirmAlert } from 'react-confirm-alert';
 import '../utils/react-confirm-alert-custom.css'
 import Modal from 'react-modal';
 import Widget from '../widget/widget';
@@ -123,15 +124,6 @@ export default class AdminDashboard extends Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
-   translateStatus() {
-    switch (this.state.request.status) {
-      case 'pending': return 'pendiente';
-      case 'approved': return 'aprobada';
-      case 'rejected': return 'rechazada';
-      case 'taken': return 'tomada';
-      case 'not_taken': return 'no tomada';
-    }
-  }
   componentDidMount() {
     this.getLeavesStatus();
   }
@@ -189,7 +181,7 @@ export default class AdminDashboard extends Component {
           style={customStyles}
           contentLabel="Detalles">
           <div className={`leave-dashboar-modal-status ${this.state.request.status}`}>
-            <small>{this.translateStatus()} </small>
+            <small>{I18n.translate(this.state.request.status)} </small>
           </div>
           <div className="close-modal-container" onClick={this.closeModal.bind(this)}><span >X</span></div>
           <div>
