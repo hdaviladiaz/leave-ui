@@ -17,6 +17,16 @@ export default class ManageRequestTableRow extends Component {
     }
   }
 
+   translateStatus() {
+    switch (this.props.request.status) {
+      case 'pending': return 'pendiente';
+      case 'approved': return 'aprobada';
+      case 'rejected': return 'rechazada';
+      case 'taken': return 'tomada';
+      case 'not_taken': return 'no tomada';
+    }
+  }
+
   render() {
    this.initialize();
 
@@ -39,7 +49,7 @@ export default class ManageRequestTableRow extends Component {
           </span>
         </div>
         <div className={`manage-request-table-item-tools ${this.showStatusClass}`}>
-          <span>{this.props.request.status}</span>
+          <span className={`leave-request-table-item-status ${this.props.request.status}`}>{this.translateStatus()}</span>
         </div>
       </div>
     );

@@ -110,3 +110,15 @@ input[type=text]{
   height: 35px;
   padding: 15px;
 }
+.pending{
+  color:white;
+  background-color: #f0ad4e;
+}
+.approved{
+  color:white;
+  background-color: #5cb85c;;
+}
+.rejected{
+  color:white;
+  background-color: rgba(217, 83, 79, 0.88);
+}

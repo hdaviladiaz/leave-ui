@@ -122,6 +122,16 @@ export default class AdminDashboard extends Component {
     this.onclick = this.onclick.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
+
+   translateStatus() {
+    switch (this.state.request.status) {
+      case 'pending': return 'pendiente';
+      case 'approved': return 'aprobada';
+      case 'rejected': return 'rechazada';
+      case 'taken': return 'tomada';
+      case 'not_taken': return 'no tomada';
+    }
+  }
   componentDidMount() {
     this.getLeavesStatus();
   }
@@ -178,6 +188,9 @@ export default class AdminDashboard extends Component {
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="Detalles">
+          <div className={`leave-dashboar-modal-status ${this.state.request.status}`}>
+            <small>{this.translateStatus()} </small>
+          </div>
           <div className="close-modal-container" onClick={this.closeModal.bind(this)}><span >X</span></div>
           <div>
 
@@ -186,6 +199,7 @@ export default class AdminDashboard extends Component {
                 {/*<img src="img/user/09.jpg" alt="Image" className="img-thumbnail img-circle thumb128" />*/}
                 <h3 >{this.state.request.employee_name}</h3>
                 <p>{this.state.request.employee_id}</p>
+                <p><b>Aprobador: </b>{this.state.request.approver_id}</p>
               </div>
             </div>
 
